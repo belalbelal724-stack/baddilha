@@ -23,7 +23,7 @@
   --bdr:rgba(120,60,40,.13); --bdr2:rgba(120,60,40,.22);
   --sh:0 2px 16px rgba(234,88,12,.10);
   --sh2:0 6px 28px rgba(234,88,12,.16);
-  --nav:62px; --hdr:72px;
+  --nav:62px; --hdr:84px;
   --st:env(safe-area-inset-top,0px);
   --sb:env(safe-area-inset-bottom,0px);
   --rad:14px; --rad-sm:10px; --rad-lg:20px; --rad-xl:26px;
@@ -111,28 +111,28 @@ button{font-family:inherit;cursor:pointer}
   box-shadow:0 3px 20px rgba(0,0,0,.22);
   position:relative;z-index:20;
 }
-.hdr-logo{display:flex;align-items:center;gap:11px;flex:1;min-width:0}
+.hdr-logo{display:flex;align-items:center;gap:9px;flex:1;min-width:0}
 .hdr-emblem{
-  width:46px;height:46px;border-radius:14px;
+  width:50px;height:50px;border-radius:15px;
   background:rgba(255,255,255,.18);
   border:1.5px solid rgba(255,255,255,.4);
   display:flex;align-items:center;justify-content:center;
-  font-size:24px;flex-shrink:0;
+  font-size:26px;flex-shrink:0;
 }
 .hdr-brand{min-width:0}
 .hdr-name{
-  font-size:24px;font-weight:900;color:#FFF8F0;line-height:1.1;
-  letter-spacing:-0.5px;
+  font-size:27px;font-weight:900;color:#FFF8F0;line-height:1.1;
+  letter-spacing:-0.5px;white-space:nowrap;
   text-shadow:0 0 12px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.25),0 1px 3px rgba(0,0,0,.3);
 }
-.hdr-sub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
-.hdr-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.hdr-sub{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:190px}
+.hdr-actions{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .hdr-btn{
-  width:40px;height:40px;border-radius:12px;border:none;
+  width:37px;height:37px;border-radius:11px;border:none;
   background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);
   display:flex;align-items:center;justify-content:center;
-  font-size:18px;transition:background .2s;
-  position:relative;
+  font-size:17px;transition:background .2s;
+  position:relative;flex-shrink:0;
 }
 .hdr-btn:active{background:rgba(255,255,255,.22)}
 .hdr-btn-badge{
@@ -725,11 +725,13 @@ button{font-family:inherit;cursor:pointer}
 .pay-success-s{font-size:13px;color:var(--tx3);margin-bottom:24px;line-height:1.5}
 /* revenue badge in header */
 .rev-badge{
-  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
-  border-radius:10px;padding:3px 8px;
-  font-size:11px;font-weight:800;color:#FFF8F0;
-  display:none;align-items:center;gap:3px;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  border-radius:9px;padding:2px 6px;
+  font-size:10px;font-weight:800;color:#FFF8F0;
+  display:none;align-items:center;gap:2px;white-space:nowrap;
 }
+/* على شاشات الموبايل الضيقة: أخفِ شارة الإيرادات لإفساح مساحة الشعار */
+@media (max-width:430px){#revBadge{display:none!important}}
 
 /* ─── RATING ─────────────────────────────── */
 .stars-row{display:flex;gap:4px;direction:ltr}
@@ -875,6 +877,69 @@ button{font-family:inherit;cursor:pointer}
 .dlv-sum-label{font-size:12px;color:var(--tx3)}.dlv-sum-val{font-size:13px;font-weight:800;color:var(--tx)}.dlv-sum-total{font-size:16px;font-weight:900;color:#1e4d7b}
 .dlv-cta{width:100%;padding:15px;border-radius:14px;border:none;background:linear-gradient(135deg,#1a3a5c,#1e4d7b);color:#fff;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 20px rgba(30,77,123,.35)}
 .dlv-footer{padding:14px 16px calc(var(--sb)+14px);flex-shrink:0;border-top:1px solid var(--bdr)}
+
+/* ─── DELIVERY · PROVIDERS (رفيق/طلبات/سنونو/كيتا) ─── */
+.dlv-providers{display:flex;flex-direction:column;gap:9px}
+.dlv-prov{display:flex;align-items:center;gap:11px;padding:12px 13px;border-radius:14px;border:2px solid var(--bdr);background:var(--card);cursor:pointer;transition:.18s;position:relative}
+.dlv-prov.sel{border-color:#1e4d7b;background:rgba(30,77,123,.05)}
+.dlv-prov-logo{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:#fff;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.dlv-prov-mid{flex:1;min-width:0}
+.dlv-prov-name{font-size:14px;font-weight:900;color:var(--tx);display:flex;align-items:center;gap:6px}
+.dlv-prov-meta{font-size:10.5px;color:var(--tx3);margin-top:2px}
+.dlv-prov-tag{font-size:9px;font-weight:800;padding:1px 6px;border-radius:6px;background:rgba(34,197,94,.14);color:#16a34a}
+.dlv-prov-tag.fast{background:rgba(234,88,12,.14);color:#EA580C}
+.dlv-prov-tag.cheap{background:rgba(99,102,241,.14);color:#6366F1}
+.dlv-prov-right{text-align:left;flex-shrink:0}
+.dlv-prov-fee{font-size:15px;font-weight:900;color:#1e4d7b}
+.dlv-prov-eta{font-size:9.5px;color:var(--tx3);margin-top:1px}
+.dlv-quote{display:flex;gap:8px;margin-bottom:10px}
+.dlv-quote-cell{flex:1;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:10px;text-align:center}
+.dlv-quote-v{font-size:15px;font-weight:900;color:var(--tx)}.dlv-quote-l{font-size:9.5px;color:var(--tx3);margin-top:2px}
+/* ─── DELIVERY · LIVE TRACKING ─── */
+.trk-eta{background:linear-gradient(135deg,#1a3a5c,#1e4d7b);border-radius:16px;padding:16px;color:#fff;margin-bottom:14px;position:relative;overflow:hidden}
+.trk-eta::after{content:'';position:absolute;top:-30px;left:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(255,255,255,.12),transparent 70%)}
+.trk-eta-status{font-size:11px;font-weight:800;opacity:.85;display:flex;align-items:center;gap:6px}
+.trk-eta-live{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:pulse-live 1.6s infinite}
+@keyframes pulse-live{0%{box-shadow:0 0 0 0 rgba(74,222,128,.7)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+.trk-eta-time{font-size:30px;font-weight:900;margin-top:6px;line-height:1}
+.trk-eta-sub{font-size:11px;opacity:.8;margin-top:4px}
+.trk-eta-prog{height:5px;background:rgba(255,255,255,.2);border-radius:3px;margin-top:12px;overflow:hidden}
+.trk-eta-bar{height:100%;background:linear-gradient(90deg,#4ade80,#86efac);border-radius:3px;transition:width 1s linear}
+.trk-map{height:130px;border-radius:16px;margin-bottom:14px;position:relative;overflow:hidden;background:linear-gradient(135deg,#dbeae8,#c8dce0);border:1px solid var(--bdr)}
+[data-dark=true] .trk-map{background:linear-gradient(135deg,#1a2530,#22303a)}
+.trk-map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(30,77,123,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(30,77,123,.07) 1px,transparent 1px);background-size:26px 26px}
+.trk-map-route{position:absolute;left:14%;right:14%;top:50%;height:3px;background:repeating-linear-gradient(90deg,#1e4d7b 0 8px,transparent 8px 14px);transform:translateY(-50%)}
+.trk-pin{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:18px}
+.trk-pin.from{right:12%;font-size:16px}.trk-pin.to{left:12%;font-size:16px}
+.trk-van{position:absolute;top:50%;transform:translate(-50%,-50%);font-size:22px;transition:right 1s linear;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.trk-driver{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:14px;margin-bottom:14px}
+.trk-driver-top{display:flex;align-items:center;gap:12px}
+.trk-driver-av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#1e4d7b,#2563EB);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;flex-shrink:0}
+.trk-driver-info{flex:1;min-width:0}
+.trk-driver-name{font-size:15px;font-weight:900;color:var(--tx)}
+.trk-driver-meta{font-size:11px;color:var(--tx3);margin-top:2px}
+.trk-driver-rate{font-size:11px;font-weight:800;color:#EA580C;margin-top:2px}
+.trk-driver-veh{display:flex;gap:8px;margin-top:11px}
+.trk-veh-chip{flex:1;background:var(--bg2);border-radius:10px;padding:7px 9px;text-align:center}
+.trk-veh-v{font-size:12px;font-weight:800;color:var(--tx)}.trk-veh-l{font-size:9px;color:var(--tx3);margin-top:1px}
+.trk-driver-btns{display:flex;gap:9px;margin-top:11px}
+.trk-call,.trk-chat-d{flex:1;padding:11px;border-radius:12px;border:none;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.trk-call{background:linear-gradient(135deg,#16a34a,#22C55E);color:#fff}
+.trk-chat-d{background:var(--bg2);color:var(--tx);border:1px solid var(--bdr2)}
+.trk-num{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px dashed var(--bdr2);border-radius:12px;padding:11px 13px;margin-bottom:14px}
+.trk-num-l{font-size:10px;color:var(--tx3)}.trk-num-v{font-size:14px;font-weight:900;color:var(--tx);letter-spacing:.5px;font-family:monospace}
+.trk-copy{background:rgba(30,77,123,.1);border:none;color:#1e4d7b;border-radius:8px;padding:6px 11px;font-family:inherit;font-size:11px;font-weight:800;cursor:pointer}
+.trk-cancel{width:100%;padding:12px;border-radius:12px;border:1.5px solid #DC2626;background:transparent;color:#DC2626;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:4px}
+.trk-prov-bar{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:11px 13px;margin-bottom:14px}
+.trk-prov-bar .dlv-prov-logo{width:34px;height:34px;font-size:12px}
+/* ─── HOME · ACTIVE DELIVERY BANNER ─── */
+.dlv-live-banner{margin:0 16px 12px;background:linear-gradient(135deg,#1a3a5c,#1e4d7b);border-radius:16px;padding:13px 15px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 6px 18px rgba(30,77,123,.3)}
+.dlv-live-ico{font-size:26px;animation:van-move 1.4s ease-in-out infinite}
+@keyframes van-move{0%,100%{transform:translateX(0)}50%{transform:translateX(-5px)}}
+.dlv-live-t{flex:1;color:#fff}
+.dlv-live-t1{font-size:13px;font-weight:900;display:flex;align-items:center;gap:7px}
+.dlv-live-t2{font-size:11px;opacity:.85;margin-top:2px}
+.dlv-live-arrow{color:#fff;font-size:18px;opacity:.8}
 
 /* ─── SMART MATCH ────────────────────────── */
 .wl-modal{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);backdrop-filter:blur(4px)}
@@ -1697,6 +1762,7 @@ const A={
     try{this.updRevBadge();}catch(e){}
     try{this._initQuickRow();}catch(e){}
     try{this._updateMatchBanner();}catch(e){}
+    try{this.renderDlvBanner(); if(DeliveryAPI.getActiveOrder())DeliveryAPI.startTimer();}catch(e){}
   },
 
   isDark(){
@@ -2242,8 +2308,9 @@ const A={
     }).join('');
 
     const ACTIONS=['🤝 وصلنا لاتفاق — التالي','💳 تم السداد — التالي','🚚 أرسل للتوصيل — التالي','✅ تمت الصفقة!'];
+    const dealClick = stage===2 ? `A.openDlv(A._cAd,'${this._cid}')` : 'A._nextStage()';
     const actionBar=stage<4
-      ?`<div class="deal-action-bar"><button class="deal-action-btn" onclick="A._nextStage()">${ACTIONS[stage]}</button></div>`
+      ?`<div class="deal-action-bar"><button class="deal-action-btn" onclick="${dealClick}">${ACTIONS[stage]}</button></div>`
       :`<div class="deal-done-bar">🎉 الصفقة مكتملة — شكراً على ثقتك في بدّلها!</div>`;
 
     document.getElementById('chatScreen').innerHTML=`
@@ -2596,60 +2663,329 @@ Object.assign(A,{
 // ── DELIVERY ──
 Object.assign(A,{
   _dlvPrice:25, _dlvCo:'bosta',
-  openDlv(ad){
-    const b=document.getElementById('dlvBody');
-    const owner=(ad&&ad.owner)||'المعلن'; const area=(ad&&ad.area)||'الدوحة';
-    b.innerHTML=`<div class="dlv-section"><div class="dlv-section-t">مسار التوصيل</div>
-      <div class="dlv-addr-card" style="margin-bottom:8px"><div class="dlv-addr-ico from">📦</div><div class="dlv-addr-info"><div class="dlv-addr-label">الاستلام من</div><div class="dlv-addr-name">${owner}</div><div class="dlv-addr-loc">📍 ${area}</div><input class="dlv-addr-input" id="dlvFrom" value="${area}" placeholder="العنوان التفصيلي..."></div></div>
-      <div style="text-align:center;font-size:22px;color:var(--tx3);margin:4px 0">↕</div>
-      <div class="dlv-addr-card"><div class="dlv-addr-ico to">🏠</div><div class="dlv-addr-info"><div class="dlv-addr-label">التوصيل إليك</div><div class="dlv-addr-name">أنت</div><input class="dlv-addr-input" id="dlvTo" placeholder="أدخل عنوانك بالتفصيل..."></div></div></div>
-    <div class="dlv-section"><div class="dlv-section-t">شركة التوصيل</div><div class="dlv-cos">
-      <div class="dlv-co sel" onclick="A._selCo(this,'bosta',25)"><div class="dlv-co-logo">🟠</div><div style="flex:1"><div class="dlv-co-name">Bosta</div><div class="dlv-co-sub">24-48 ساعة • الأكثر استخداماً</div></div><div class="dlv-co-price">25 ر</div><div class="dlv-co-radio"></div></div>
-      <div class="dlv-co" onclick="A._selCo(this,'mrsool',40)"><div class="dlv-co-logo">🟣</div><div style="flex:1"><div class="dlv-co-name">Mrsool</div><div class="dlv-co-sub">فوري خلال ساعتين</div></div><div class="dlv-co-price">40 ر</div><div class="dlv-co-radio"></div></div>
-      <div class="dlv-co" onclick="A._selCo(this,'aramex',18)"><div class="dlv-co-logo">🔴</div><div style="flex:1"><div class="dlv-co-name">Aramex</div><div class="dlv-co-sub">2-3 أيام • الأوفر سعراً</div></div><div class="dlv-co-price">18 ر</div><div class="dlv-co-radio"></div></div>
-    </div></div>
-    <div class="dlv-section"><div class="dlv-section-t">تتبع الشحنة المباشر</div><div class="dlv-track">
-      <div class="dlv-track-row done"><div class="dlv-track-dot">✓</div><div class="dlv-track-info"><div class="dlv-track-t">تم تأكيد الطلب</div><div class="dlv-track-s">استلمنا طلب التوصيل</div><div class="dlv-track-time">اليوم 04:11 م</div></div></div>
-      <div class="dlv-track-row active"><div class="dlv-track-dot">📦</div><div class="dlv-track-info"><div class="dlv-track-t">جاري الاستلام</div><div class="dlv-track-s">السائق في الطريق للمُرسِل</div><div class="dlv-track-time">خلال 30 دقيقة</div></div></div>
-      <div class="dlv-track-row"><div class="dlv-track-dot">🚚</div><div class="dlv-track-info"><div class="dlv-track-t">في الطريق إليك</div><div class="dlv-track-s">الغرض في عربية التوصيل</div></div></div>
-      <div class="dlv-track-row"><div class="dlv-track-dot">✅</div><div class="dlv-track-info"><div class="dlv-track-t">تم التسليم</div><div class="dlv-track-s">وصل الغرض بأمان</div></div></div>
-    </div></div>
-    <div class="dlv-section"><div class="dlv-section-t">ملخص التكلفة</div><div class="dlv-summary">
-      <div class="dlv-sum-row"><span class="dlv-sum-label">رسوم التوصيل</span><span class="dlv-sum-val" id="dlvShipCost">25 ريال</span></div>
-      <div class="dlv-sum-row"><span class="dlv-sum-label">تأمين الشحنة</span><span class="dlv-sum-val" style="color:#22C55E">مجاني ✓</span></div>
-      <div class="dlv-sum-row"><span class="dlv-sum-label">عمولة المنصة</span><span class="dlv-sum-val">5 ريال</span></div>
-      <div class="dlv-sum-row"><span class="dlv-sum-label" style="font-weight:900;color:var(--tx)">الإجمالي</span><span class="dlv-sum-total" id="dlvTotal">30 ريال</span></div>
-    </div><div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px">🔒 API: Bosta • Aramex • Mrsool</div></div>
-    <div style="height:8px"></div>`;
+  /* ── DELIVERY · open (form or live tracking) ── */
+  openDlv(ad,dealCid){
+    this._dlvAd=ad||this._dlvAd||{owner:'المعلن',area:'الدوحة',have:'الغرض'};
+    if(dealCid)this._dlvDealCid=dealCid;
+    const hdr=document.querySelector('.dlv-hdr-t'), hsub=document.querySelector('.dlv-hdr-s');
+    const order=DeliveryAPI.getActiveOrder();
+    if(order){ if(hdr)hdr.textContent='🚚 تتبّع شحنتك'; if(hsub)hsub.textContent='تتبّع مباشر — '+order.providerName;
+      this._dlvRenderTracking(); DeliveryAPI.startTimer();
+    } else { if(hdr)hdr.textContent='🚚 طلب توصيل'; if(hsub)hsub.textContent='اختر شريك التوصيل وأكمل الطلب';
+      this._dlvRenderForm();
+    }
     document.getElementById('dlvModal').classList.add('open');
   },
-  _selCo(el,co,price){
-    document.querySelectorAll('.dlv-co').forEach(e=>e.classList.remove('sel'));
-    el.classList.add('sel'); this._dlvCo=co; this._dlvPrice=price;
-    const nm={bosta:'Bosta',mrsool:'Mrsool',aramex:'Aramex'};
-    const sc=document.getElementById('dlvShipCost'); if(sc)sc.textContent=price+' ريال';
-    const tot=document.getElementById('dlvTotal'); if(tot)tot.textContent=(price+5)+' ريال';
-    const btn=document.getElementById('dlvCtaBtn'); if(btn)btn.textContent='🚚 اطلب التوصيل عبر '+nm[co];
-  },
   closeDlv(){document.getElementById('dlvModal').classList.remove('open');},
+
+  /* ── DELIVERY · order form ── */
+  _dlvRenderForm(){
+    const ad=this._dlvAd; const owner=ad.owner||'المعلن'; const fromArea=ad.area||'الدوحة';
+    this._dlvProvider=this._dlvProvider||DLV_PROVIDERS[0].id;
+    this._dlvToArea=this._dlvToArea||'الدوحة';
+    document.querySelector('.dlv-footer').style.display='block';
+    const b=document.getElementById('dlvBody');
+    const areaOpts=AREAS.slice(1).map(a=>`<option${a===this._dlvToArea?' selected':''}>${a}</option>`).join('');
+    b.innerHTML=`
+      <div class="dlv-section"><div class="dlv-section-t">مسار التوصيل</div>
+        <div class="dlv-addr-card" style="margin-bottom:8px"><div class="dlv-addr-ico from">📦</div><div class="dlv-addr-info"><div class="dlv-addr-label">الاستلام من</div><div class="dlv-addr-name">${owner}</div><div class="dlv-addr-loc">📍 ${fromArea}</div></div></div>
+        <div style="text-align:center;font-size:20px;color:var(--tx3);margin:2px 0">↕</div>
+        <div class="dlv-addr-card"><div class="dlv-addr-ico to">🏠</div><div class="dlv-addr-info"><div class="dlv-addr-label">التوصيل إليك</div>
+          <select class="dlv-addr-input" id="dlvToArea" style="margin-top:2px" onchange="A._dlvUpdateQuote()">${areaOpts}</select>
+          <input class="dlv-addr-input" id="dlvToDetail" placeholder="الشارع، المبنى، رقم الشقة..."></div></div></div>
+      <div class="dlv-section"><div class="dlv-section-t">المسافة والوقت المتوقع</div>
+        <div class="dlv-quote">
+          <div class="dlv-quote-cell"><div class="dlv-quote-v" id="dlvDist">—</div><div class="dlv-quote-l">المسافة</div></div>
+          <div class="dlv-quote-cell"><div class="dlv-quote-v" id="dlvEta">—</div><div class="dlv-quote-l">وقت الوصول</div></div>
+          <div class="dlv-quote-cell"><div class="dlv-quote-v" id="dlvFromZone">${fromArea}</div><div class="dlv-quote-l">→ ${'<span id=dlvToZone>'+this._dlvToArea+'</span>'}</div></div>
+        </div></div>
+      <div class="dlv-section"><div class="dlv-section-t">اختر شريك التوصيل</div>
+        <div class="dlv-providers" id="dlvProviders"></div></div>
+      <div class="dlv-section"><div class="dlv-section-t">ملخص التكلفة</div><div class="dlv-summary">
+        <div class="dlv-sum-row"><span class="dlv-sum-label">رسوم التوصيل</span><span class="dlv-sum-val" id="dlvShipCost">—</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label">تأمين الشحنة حتى 2000 ر.ق</span><span class="dlv-sum-val" style="color:#22C55E">مجاني ✓</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label">عمولة المنصة</span><span class="dlv-sum-val">5 ريال</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label" style="font-weight:900;color:var(--tx)">الإجمالي</span><span class="dlv-sum-total" id="dlvTotal">—</span></div>
+      </div>
+      <div style="font-size:9.5px;color:var(--tx3);text-align:center;margin-top:8px">🔌 تكامل API مع: رفيق · طلبات · سنونو · كيتا</div></div>
+      <div style="height:8px"></div>`;
+    this._dlvUpdateQuote();
+  },
+  _dlvUpdateQuote(){
+    const toSel=document.getElementById('dlvToArea'); if(toSel)this._dlvToArea=toSel.value;
+    const fromArea=(this._dlvAd&&this._dlvAd.area)||'الدوحة';
+    const dist=DeliveryAPI.distanceKm(fromArea,this._dlvToArea);
+    const tz=document.getElementById('dlvToZone'); if(tz)tz.textContent=this._dlvToArea;
+    const dd=document.getElementById('dlvDist'); if(dd)dd.textContent=dist.toFixed(1)+' كم';
+    // provider cards
+    const cont=document.getElementById('dlvProviders'); if(!cont)return;
+    cont.innerHTML=DLV_PROVIDERS.map(p=>{
+      const fee=DeliveryAPI.quote(p.id,dist);
+      const sel=p.id===this._dlvProvider;
+      const txtCol=p.id==='keeta'?'#1a1a1a':'#fff';
+      return `<div class="dlv-prov${sel?' sel':''}" onclick="A._dlvSelectProvider('${p.id}')">
+        <div class="dlv-prov-logo" style="background:${p.color};color:${txtCol}">${p.logo}</div>
+        <div class="dlv-prov-mid"><div class="dlv-prov-name">${p.name} <span class="dlv-prov-tag ${p.tagCls}">${p.tag}</span></div>
+          <div class="dlv-prov-meta">⭐ ${p.rating} · ${p.vehicle} · توصيل ${p.etaMin[0]}-${p.etaMin[1]} د</div></div>
+        <div class="dlv-prov-right"><div class="dlv-prov-fee">${fee} ر</div><div class="dlv-prov-eta">+5 عمولة</div></div>
+      </div>`;
+    }).join('');
+    const p=DLV_PROVIDERS.find(x=>x.id===this._dlvProvider);
+    const fee=DeliveryAPI.quote(p.id,dist);
+    const eta=Math.round((p.etaMin[0]+p.etaMin[1])/2);
+    const de=document.getElementById('dlvEta'); if(de)de.textContent='~'+eta+' دقيقة';
+    const sc=document.getElementById('dlvShipCost'); if(sc)sc.textContent=fee+' ريال';
+    const tot=document.getElementById('dlvTotal'); if(tot)tot.textContent=(fee+5)+' ريال';
+    const btn=document.getElementById('dlvCtaBtn'); if(btn)btn.innerHTML=`🚚 اطلب عبر ${p.name} — ${fee+5} ريال`;
+  },
+  _dlvSelectProvider(id){this._dlvProvider=id;this._dlvUpdateQuote();},
+
   confirmDlv(){
-    const t=document.getElementById('dlvTo');
-    if(!t||!t.value.trim()){this.toast('⚠️ أدخل عنوانك أولاً');return;}
+    const det=document.getElementById('dlvToDetail');
+    if(!det||!det.value.trim()){this.toast('⚠️ أدخل عنوانك التفصيلي أولاً');return;}
     const btn=document.getElementById('dlvCtaBtn');
-    btn.textContent='⏳ جاري التأكيد...'; btn.disabled=true;
+    btn.textContent='⏳ جاري إرسال الطلب للمندوبين...'; btn.disabled=true;
+    DeliveryAPI.requestNotifications();
+    const ad=this._dlvAd; const fromArea=ad.area||'الدوحة';
+    // realistic dispatch delay
     setTimeout(()=>{
-      btn.textContent='🚚 اطلب التوصيل الآن'; btn.disabled=false;
-      this.closeDlv();
-      this.toast('✅ تم إرسال طلب التوصيل! سيصلك خلال 24-48 ساعة 🚚');
-    },2000);
+      const order=DeliveryAPI.createOrder({
+        providerId:this._dlvProvider,
+        fromArea, fromName:ad.owner||'المعلن',
+        toArea:this._dlvToArea, toDetail:det.value.trim(),
+        item:(ad.have||'الغرض').substring(0,40),
+        adId:ad.id||null
+      });
+      btn.disabled=false;
+      this.toast('✅ تم تأكيد الطلب! المندوب في الطريق 🚚');
+      // advance the deal stage if opened from a chat deal
+      if(this._dlvDealCid && S.getDealStage(this._dlvDealCid)<3){
+        S.setDealStage(this._dlvDealCid,3);
+        S.saveMsg(this._dlvDealCid,'sys',`🚚 تم طلب التوصيل عبر ${order.providerName} — رقم التتبّع ${order.trackingId}`,'stage');
+      }
+      this.updRevBadge(); this.renderDlvBanner();
+      this._dlvRenderTracking(); DeliveryAPI.startTimer();
+      const hdr=document.querySelector('.dlv-hdr-t'); if(hdr)hdr.textContent='🚚 تتبّع شحنتك';
+      const hsub=document.querySelector('.dlv-hdr-s'); if(hsub)hsub.textContent='تتبّع مباشر — '+order.providerName;
+    },1600);
+  },
+
+  /* ── DELIVERY · live tracking view ── */
+  _dlvRenderTracking(){
+    const order=DeliveryAPI.getActiveOrder(); if(!order){this._dlvRenderForm();return;}
+    document.querySelector('.dlv-footer').style.display='none';
+    const st=DeliveryAPI.status(order); const p=DLV_PROVIDERS.find(x=>x.id===order.providerId)||DLV_PROVIDERS[0]; const d=order.driver;
+    const txtCol=p.id==='keeta'?'#1a1a1a':'#fff';
+    const driverAssigned=st.idx>=2;
+    const remainMin=Math.max(0,Math.round(order.etaMin*(1-st.prog)));
+    const etaClock=new Date(order.createdAt+order.etaMin*60000).toLocaleTimeString('ar',{hour:'2-digit',minute:'2-digit'});
+    const vanRight=12+st.prog*76;
+    const timeline=DLV_STAGES.map((s,i)=>{
+      const cls=i<st.idx?'done':i===st.idx?'active':'';
+      const tm=i<=st.idx?new Date(order.createdAt+s.sec*1000).toLocaleTimeString('ar',{hour:'2-digit',minute:'2-digit'}):'';
+      const sub=(s.s||'').replace('{driver}',d.name).replace('{owner}',order.fromName);
+      return `<div class="dlv-track-row ${cls}"><div class="dlv-track-dot">${i<st.idx?'✓':s.ico}</div>
+        <div class="dlv-track-info"><div class="dlv-track-t">${s.t}</div><div class="dlv-track-s">${sub}</div>${tm?`<div class="dlv-track-time">${tm}</div>`:''}</div></div>`;
+    }).join('');
+    const driverCard=driverAssigned&&!st.done?`
+      <div class="dlv-section"><div class="dlv-section-t">مندوب التوصيل</div>
+      <div class="trk-driver">
+        <div class="trk-driver-top">
+          <div class="trk-driver-av">${d.av}</div>
+          <div class="trk-driver-info"><div class="trk-driver-name">${d.name}</div>
+            <div class="trk-driver-meta">${d.trips.toLocaleString('en')} رحلة مكتملة</div>
+            <div class="trk-driver-rate">⭐ ${d.rating} تقييم المندوب</div></div>
+        </div>
+        <div class="trk-driver-veh">
+          <div class="trk-veh-chip"><div class="trk-veh-v">${d.veh}</div><div class="trk-veh-l">المركبة</div></div>
+          <div class="trk-veh-chip"><div class="trk-veh-v">${d.plate}</div><div class="trk-veh-l">رقم اللوحة</div></div>
+        </div>
+        <div class="trk-driver-btns">
+          <button class="trk-call" onclick="A._dlvCallDriver()">📞 اتصل بالمندوب</button>
+          <button class="trk-chat-d" onclick="A.toast('💬 محادثة المندوب متاحة')">💬 مراسلة</button>
+        </div>
+      </div></div>`:'';
+    const cancelBtn=(st.idx<3&&!st.done)?`<button class="trk-cancel" onclick="A._dlvCancelOrder()">إلغاء الطلب</button>`:'';
+    const ratePrompt=st.done&&!order.rated?`<button class="dlv-cta" style="margin-top:4px" onclick="A._dlvRate()">⭐ قيّم خدمة التوصيل</button>`:'';
+    document.getElementById('dlvBody').innerHTML=`
+      <div class="trk-prov-bar"><div class="dlv-prov-logo" style="background:${p.color};color:${txtCol}">${p.logo}</div>
+        <div style="flex:1"><div style="font-size:13px;font-weight:900;color:var(--tx)">${order.providerName}</div>
+        <div style="font-size:10px;color:var(--tx3)">${order.item}</div></div>
+        <div style="font-size:11px;font-weight:800;color:#22C55E">${order.total} ر.ق ${order.paid?'مدفوع ✓':''}</div></div>
+      <div class="trk-eta">
+        <div class="trk-eta-status"><span class="trk-eta-live"></span> <span id="trkStatusTxt">${st.t}</span></div>
+        <div class="trk-eta-time" id="trkEtaTime">${st.done?'تم التسليم 🎉':remainMin+' دقيقة'}</div>
+        <div class="trk-eta-sub" id="trkEtaSub">${st.done?'شكراً لاستخدامك بدّلها':'الوصول المتوقع · '+etaClock}</div>
+        <div class="trk-eta-prog"><div class="trk-eta-bar" id="trkBar" style="width:${Math.round(st.prog*100)}%"></div></div>
+      </div>
+      <div class="trk-map">
+        <div class="trk-map-grid"></div><div class="trk-map-route"></div>
+        <div class="trk-pin to">🏠</div><div class="trk-pin from">📦</div>
+        <div class="trk-van" id="trkVan" style="right:${vanRight}%">${st.done?'✅':'🚚'}</div>
+      </div>
+      <div class="trk-num"><div><div class="trk-num-l">رقم التتبّع</div><div class="trk-num-v">${order.trackingId}</div></div>
+        <button class="trk-copy" onclick="A._dlvCopyTrk('${order.trackingId}')">📋 نسخ</button></div>
+      ${driverCard}
+      <div class="dlv-section"><div class="dlv-section-t">مراحل الشحنة</div><div class="dlv-track">${timeline}</div></div>
+      ${ratePrompt}${cancelBtn}
+      <div style="height:10px"></div>`;
+  },
+  _dlvCallDriver(){this.toast('📞 جاري الاتصال بالمندوب...');},
+  _dlvCopyTrk(id){navigator.clipboard&&navigator.clipboard.writeText(id).then(()=>this.toast('📋 تم نسخ رقم التتبّع')).catch(()=>this.toast('📋 '+id));},
+  _dlvCancelOrder(){
+    if(!confirm('هل تريد إلغاء طلب التوصيل؟'))return;
+    DeliveryAPI.cancelOrder(); this.renderDlvBanner(); this.closeDlv();
+    this.toast('تم إلغاء طلب التوصيل');
+  },
+  _dlvRate(){
+    const o=DeliveryAPI.getActiveOrder(); if(o){o.rated=true;S.s('bdl_dlv',o);}
+    DeliveryAPI.clearOrder(); this.renderDlvBanner(); this.closeDlv();
+    this.toast('⭐ شكراً لتقييمك خدمة التوصيل!');
+  },
+  /* live tick — called every second by DeliveryAPI timer */
+  _dlvOnTick(order,st,changed){
+    this.renderDlvBanner();
+    const modalOpen=document.getElementById('dlvModal').classList.contains('open');
+    const tracking=!!document.getElementById('trkEtaTime');
+    if(modalOpen&&tracking){
+      if(changed){ this._dlvRenderTracking(); }
+      else {
+        const remainMin=Math.max(0,Math.round(order.etaMin*(1-st.prog)));
+        const t=document.getElementById('trkEtaTime'); if(t&&!st.done)t.textContent=remainMin+' دقيقة';
+        const bar=document.getElementById('trkBar'); if(bar)bar.style.width=Math.round(st.prog*100)+'%';
+        const van=document.getElementById('trkVan'); if(van)van.style.right=(12+st.prog*76)+'%';
+      }
+    }
+  },
+  /* home banner for an active delivery */
+  renderDlvBanner(){
+    const home=document.getElementById('s-home'); if(!home)return;
+    let el=document.getElementById('dlvLiveBanner');
+    const order=DeliveryAPI.getActiveOrder();
+    if(!order){ if(el)el.remove(); return; }
+    const st=DeliveryAPI.status(order);
+    if(!el){ el=document.createElement('div'); el.id='dlvLiveBanner'; el.className='dlv-live-banner';
+      el.onclick=()=>A.openDlv(A._dlvAd);
+      const qrow=document.getElementById('homeQuickRow');
+      if(qrow&&qrow.parentNode===home)home.insertBefore(el,qrow.nextSibling); else home.insertBefore(el,home.firstChild);
+    }
+    el.innerHTML=`<div class="dlv-live-ico">${st.done?'✅':'🚚'}</div>
+      <div class="dlv-live-t"><div class="dlv-live-t1">${st.done?'تم تسليم شحنتك':st.t}<span style="font-size:9px;background:rgba(255,255,255,.2);padding:1px 6px;border-radius:6px">${order.providerName}</span></div>
+      <div class="dlv-live-t2">${order.trackingId} · اضغط للتتبّع المباشر</div></div>
+      <div class="dlv-live-arrow">‹</div>`;
   },
 });
 
-/* تكامل حقيقي في الإصدار الفعلي:
-   Bosta:  POST https://app.bosta.co/api/v2/deliveries
-   Aramex: POST https://ws.aramex.net/ShippingAPI.V2/Shipping/Service_1_0.svc/json/CreateShipments
-   Mrsool: POST https://api.mrsool.co/v4/orders
-*/
+/* ════════════════ DELIVERY INTEGRATION LAYER ════════════════
+ * شركاء التوصيل في قطر: رفيق · طلبات · سنونو · كيتا
+ * هذه طبقة API موحّدة. في الإنتاج تُستبدل المحاكاة بنداء فعلي
+ * عبر backend proxy يحفظ مفتاح الـ merchant (انظر القالب أسفله).
+ */
+const QATAR_ZONES={ // إحداثيات تقريبية لحساب المسافة (haversine)
+  'الدوحة':[25.2854,51.5310],'الريان':[25.2919,51.4244],'الوكرة':[25.1659,51.6034],
+  'الخور':[25.6840,51.4979],'الغرافة':[25.3360,51.4420],'مشيرب':[25.2867,51.5260],
+  'لوسيل':[25.4300,51.4900],'أم سلال':[25.4050,51.4030],'الظعاين':[25.5790,51.4830],
+  'الشمال':[26.1200,51.2000],'الزعين':[25.5700,51.4900],'المظيلة':[25.2500,51.4200],
+  'السد':[25.2700,51.5050],'فريج':[25.2870,51.5300],'أبو هامور':[25.2400,51.4900]
+};
+const DLV_PROVIDERS=[
+  {id:'rafeeq', name:'رفيق', en:'Rafeeq', color:'#E8590C', logo:'ر', base:15, perKm:1.2, etaMin:[30,45], rating:4.7, vehicle:'دراجة نارية', tag:'الأسرع', tagCls:'fast', prefix:'RFQ', endpoint:'https://api.rafeeq.qa/v1/orders'},
+  {id:'talabat',name:'طلبات', en:'Talabat',color:'#FF5A00', logo:'ط', base:18, perKm:1.5, etaMin:[25,40], rating:4.6, vehicle:'دراجة نارية', tag:'موثوق', tagCls:'', prefix:'TLB', endpoint:'https://api.talabat.com/v2/logistics/orders'},
+  {id:'snoonu', name:'سنونو', en:'Snoonu', color:'#1B2A6B', logo:'س', base:16, perKm:1.3, etaMin:[30,50], rating:4.5, vehicle:'سيارة', tag:'قطري 🇶🇦', tagCls:'', prefix:'SNO', endpoint:'https://api.snoonu.com/v3/delivery'},
+  {id:'keeta',  name:'كيتا', en:'Keeta', color:'#FFD400', logo:'ك', base:12, perKm:1.0, etaMin:[40,60], rating:4.4, vehicle:'دراجة نارية', tag:'الأوفر', tagCls:'cheap', prefix:'KTA', endpoint:'https://api.keeta.com/v1/orders'}
+];
+const DLV_DRIVERS=[
+  {name:'محمد أشرف', av:'م', rating:4.8, veh:'دراجة نارية', plate:'٣٤٥٢١', trips:1240},
+  {name:'راجو كومار', av:'ر', rating:4.9, veh:'سيارة بيك أب', plate:'٢٢٨٧٦', trips:2103},
+  {name:'بلال أحمد', av:'ب', rating:4.7, veh:'دراجة نارية', plate:'٧١٤٤٩', trips:876},
+  {name:'سانجاي راج', av:'س', rating:4.6, veh:'فان توصيل', plate:'٥٨١٩٣', trips:1530},
+  {name:'أحمد فاروق', av:'أ', rating:4.9, veh:'دراجة نارية', plate:'٩٠٦٦٢', trips:1987}
+];
+const DLV_STAGES=[
+  {key:'confirmed', sec:0,  ico:'✓',  t:'تم تأكيد الطلب', s:'استلمنا طلبك وجاري ربطك بأقرب مندوب'},
+  {key:'searching', sec:5,  ico:'🔍', t:'البحث عن مندوب', s:'نبحث عن أقرب مندوب متاح في منطقتك'},
+  {key:'assigned',  sec:13, ico:'🛵', t:'تم تعيين المندوب', s:'{driver} في طريقه لنقطة الاستلام'},
+  {key:'pickup',    sec:27, ico:'📦', t:'تم استلام الغرض', s:'استلم المندوب الغرض من {owner}'},
+  {key:'transit',   sec:42, ico:'🚚', t:'في الطريق إليك', s:'الغرض في الطريق إلى عنوانك الآن'},
+  {key:'delivered', sec:64, ico:'✅', t:'تم التسليم بنجاح', s:'وصل الغرض بأمان — تبادل موفّق!'}
+];
+const DeliveryAPI={
+  _timer:null,
+  distanceKm(a,b){
+    const A1=QATAR_ZONES[a]||QATAR_ZONES['الدوحة'], B1=QATAR_ZONES[b]||QATAR_ZONES['الدوحة'];
+    const R=6371, dLat=(B1[0]-A1[0])*Math.PI/180, dLon=(B1[1]-A1[1])*Math.PI/180;
+    const x=Math.sin(dLat/2)**2+Math.cos(A1[0]*Math.PI/180)*Math.cos(B1[0]*Math.PI/180)*Math.sin(dLon/2)**2;
+    const km=R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));
+    return Math.max(2.5,km); // حد أدنى داخل نفس المنطقة
+  },
+  quote(providerId,distKm){
+    const p=DLV_PROVIDERS.find(x=>x.id===providerId); if(!p)return 0;
+    return Math.max(p.base,Math.round(p.base+distKm*p.perKm));
+  },
+  _genTracking(prefix){let s='';const c='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';for(let i=0;i<6;i++)s+=c[Math.floor(Math.random()*c.length)];return prefix+'-'+s;},
+  createOrder(o){
+    const p=DLV_PROVIDERS.find(x=>x.id===o.providerId)||DLV_PROVIDERS[0];
+    const dist=this.distanceKm(o.fromArea,o.toArea);
+    const fee=this.quote(p.id,dist);
+    const etaMin=Math.round(p.etaMin[0]+Math.random()*(p.etaMin[1]-p.etaMin[0]));
+    const driver=DLV_DRIVERS[Math.floor(Math.random()*DLV_DRIVERS.length)];
+    const order={
+      trackingId:this._genTracking(p.prefix), providerId:p.id, providerName:p.name+' '+p.en,
+      fromArea:o.fromArea, fromName:o.fromName, toArea:o.toArea, toDetail:o.toDetail,
+      item:o.item, adId:o.adId, distKm:+dist.toFixed(1), fee, total:fee+5, paid:true,
+      etaMin, driver, createdAt:Date.now(), notified:0, rated:false
+    };
+    S.s('bdl_dlv',order);
+    // عمولة المنصّة 5 ر.ق على كل طلب توصيل
+    const rev=S.g('bdl_rev',{total:0,count:0}); rev.total+=5; rev.count++; S.s('bdl_rev',rev);
+    /* ── الإنتاج: استبدل ما سبق بنداء فعلي عبر backend proxy ──
+       const res=await fetch('/api/delivery/'+p.id, {method:'POST',
+         headers:{'Content-Type':'application/json'},
+         body:JSON.stringify({pickup:o.fromArea,dropoff:o.toArea,details:o.toDetail,item:o.item})});
+       // الـ backend يضيف مفتاح merchant السرّي وينادي ${'$'}{p.endpoint}
+       const order=await res.json(); // {trackingId, driver, eta, ...}
+    */
+    return order;
+  },
+  getActiveOrder(){const o=S.g('bdl_dlv',null); return (o&&!o._cleared)?o:null;},
+  cancelOrder(){this.clearOrder();},
+  clearOrder(){S.s('bdl_dlv',null);if(this._timer){clearInterval(this._timer);this._timer=null;}},
+  get provider(){return null;},
+  status(order){
+    const elapsed=(Date.now()-order.createdAt)/1000;
+    let idx=0; for(let i=0;i<DLV_STAGES.length;i++){ if(elapsed>=DLV_STAGES[i].sec)idx=i; }
+    const total=DLV_STAGES[DLV_STAGES.length-1].sec;
+    const prog=Math.min(1,elapsed/total);
+    const s=DLV_STAGES[idx];
+    return {idx, prog, t:s.t, key:s.key, done:s.key==='delivered'};
+  },
+  requestNotifications(){
+    try{ if('Notification' in window && Notification.permission==='default') Notification.requestPermission(); }catch(e){}
+  },
+  notify(order,st){
+    try{
+      if('Notification' in window && Notification.permission==='granted'){
+        const body={confirmed:'تم تأكيد طلب التوصيل',searching:'جاري البحث عن مندوب',assigned:order.driver.name+' في طريقه للاستلام',pickup:'تم استلام الغرض من المُرسِل',transit:'شحنتك في الطريق إليك الآن',delivered:'تم تسليم شحنتك بنجاح 🎉'}[st.key]||st.t;
+        new Notification(order.providerName+' · '+order.trackingId,{body, icon:'icon-192.png', tag:'bdl-dlv-'+order.trackingId});
+      }
+    }catch(e){}
+  },
+  startTimer(){
+    if(this._timer)return;
+    this._timer=setInterval(()=>{
+      const order=this.getActiveOrder(); if(!order){clearInterval(this._timer);this._timer=null;return;}
+      const st=this.status(order);
+      let changed=false;
+      if(st.idx>order.notified){ order.notified=st.idx; S.s('bdl_dlv',order); this.notify(order,st); changed=true; }
+      // expose provider/driver objects to A render
+      order.provider=DLV_PROVIDERS.find(x=>x.id===order.providerId);
+      if(typeof A!=='undefined'&&A._dlvOnTick)A._dlvOnTick(order,st,changed);
+      if(st.done){ clearInterval(this._timer); this._timer=null; }
+    },1000);
+  }
+};
+// attach live provider object getter for tracking render
+Object.defineProperty(DeliveryAPI,'__noop',{value:1});
 
 /* ═══════════════════ i18N (AR ⇄ EN) ═══════════════════ */
 const DICT={
