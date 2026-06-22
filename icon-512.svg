@@ -1,7 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="80" fill="#8A1538"/>
-  <rect x="16" y="16" width="480" height="480" rx="68" fill="none" stroke="#C9A227" stroke-width="8" opacity="0.4"/>
-  <text x="256" y="210" font-size="140" text-anchor="middle" fill="#C9A227" font-family="Arial, sans-serif" font-weight="bold">بدّل</text>
-  <text x="256" y="348" font-size="96" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-weight="bold">ها</text>
-  <path d="M 140 400 Q 256 372 372 400" stroke="#C9A227" stroke-width="6" fill="none" opacity="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5C0E25"/>
+      <stop offset="100%" stop-color="#9C1A40"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- Top arrow: right (white) -->
+  <path d="M138 200 C138 170 160 150 190 150 L374 150" stroke="#FFF8F0" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <path d="M330 108 L378 150 L330 192" stroke="#FFF8F0" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Bottom arrow: left (gold) -->
+  <path d="M374 312 C374 342 352 362 322 362 L138 362" stroke="#C9A227" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <path d="M182 320 L134 362 L182 404" stroke="#C9A227" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg>

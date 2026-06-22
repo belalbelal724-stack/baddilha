@@ -60,7 +60,7 @@ button{font-family:inherit;cursor:pointer}
 }
 @keyframes spl-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.04)}}
 .spl-brand{margin-top:20px;text-align:center}
-.spl-name{font-size:50px;font-weight:900;color:#C9A227;line-height:1;letter-spacing:-2px;text-shadow:0 0 30px rgba(201,162,39,.4)}
+.spl-name{font-size:50px;font-weight:900;color:#FFF8F0;line-height:1;letter-spacing:-2px;text-shadow:0 0 20px rgba(255,255,255,.7),0 0 50px rgba(255,255,255,.35),0 2px 4px rgba(0,0,0,.3)}
 .spl-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:.5px}
 .spl-flag{font-size:18px;margin-top:2px}
 .spl-bar{
@@ -97,9 +97,9 @@ button{font-family:inherit;cursor:pointer}
 }
 .hdr-brand{min-width:0}
 .hdr-name{
-  font-size:24px;font-weight:900;color:#C9A227;line-height:1.1;
+  font-size:24px;font-weight:900;color:#FFF8F0;line-height:1.1;
   letter-spacing:-0.5px;
-  text-shadow:0 1px 8px rgba(201,162,39,.3);
+  text-shadow:0 0 12px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.25),0 1px 3px rgba(0,0,0,.3);
 }
 .hdr-sub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}
 .hdr-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
@@ -1042,7 +1042,12 @@ button{font-family:inherit;cursor:pointer}
 <!-- ═══ SPLASH ════════════════════════════════════ -->
 <div id="splash">
   <div class="spl-wrap">
-    <div class="spl-emblem">🔄</div>
+    <div class="spl-emblem"><svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M38 14H18a4 4 0 0 0-4 4v4" stroke="#FFF8F0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M34 10l4 4-4 4" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 40H36a4 4 0 0 0 4-4v-4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 44l-4-4 4-4" stroke="#FFF8F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
     <div class="spl-brand">
       <div class="spl-name">بدّلها</div>
       <div class="spl-tagline">سوق التبادل والمقايضة</div>
@@ -1058,7 +1063,12 @@ button{font-family:inherit;cursor:pointer}
   <!-- HEADER -->
   <div id="header">
     <div class="hdr-logo">
-      <div class="hdr-emblem">🔄</div>
+      <div class="hdr-emblem"><svg width="26" height="26" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M38 14H18a4 4 0 0 0-4 4v4" stroke="#FFF8F0" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M34 10l4 4-4 4" stroke="#C9A227" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M16 40H36a4 4 0 0 0 4-4v-4" stroke="#C9A227" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M20 44l-4-4 4-4" stroke="#FFF8F0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></div>
       <div class="hdr-brand">
         <div class="hdr-name">بدّلها</div>
         <div class="hdr-sub">سوق التبادل في قطر 🇶🇦</div>
@@ -1621,12 +1631,17 @@ const A={
     document.getElementById('dkBtn').textContent=this.isDark()?'☀️':'🌙';
     if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
     this.renderChips();this.renderAds();this.renderHow();this.updBadges();this.checkMBanner();this.updRevBadge();
-    this._initQuickRow();this._updateMatchBanner();
-    setTimeout(()=>{
-      document.getElementById('splash').classList.add('hide');
-      setTimeout(()=>document.getElementById('splash').style.display='none',700);
-      // notification removed — Smart Match banner handles match alerts
-    },3000);
+    try{this._initQuickRow();}catch(e){}
+    try{this._updateMatchBanner();}catch(e){}
+    const _hideSplash=()=>{
+      const s=document.getElementById('splash');
+      if(!s||s.style.display==='none')return;
+      s.classList.add('hide');
+      setTimeout(()=>{s.style.display='none';},700);
+    };
+    document.getElementById('splash').addEventListener('click',_hideSplash,{once:true});
+    setTimeout(_hideSplash,1800);
+    setTimeout(_hideSplash,5000);
   },
 
   isDark(){
