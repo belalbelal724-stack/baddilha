@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>بدّلها - سوق التبادل في قطر</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#7A1230">
+<meta name="theme-color" content="#EA580C">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="بدّلها">
@@ -15,14 +15,14 @@
 
 /* ─── TOKENS ─────────────────────────────── */
 :root {
-  --P:#7A1230; --PD:#5C0E25; --PL:#9C1A40;
+  --P:#EA580C; --PD:#C2410C; --PL:#FB923C;
   --G:#C9A227; --GL:#E2BC45; --GD:#A5831A;
   --bg:#F7F2EE; --bg2:#EDE5DC; --bg3:#E4D9CE;
   --card:#FFFFFF; --card2:#FBF8F5;
   --tx:#18100E; --tx2:#4A3830; --tx3:#8A7068;
   --bdr:rgba(120,60,40,.13); --bdr2:rgba(120,60,40,.22);
-  --sh:0 2px 16px rgba(122,18,48,.10);
-  --sh2:0 6px 28px rgba(122,18,48,.16);
+  --sh:0 2px 16px rgba(234,88,12,.10);
+  --sh2:0 6px 28px rgba(234,88,12,.16);
   --nav:62px; --hdr:72px;
   --st:env(safe-area-inset-top,0px);
   --sb:env(safe-area-inset-bottom,0px);
@@ -31,8 +31,8 @@
 [data-dark=true]{
   --bg:#100A0E; --bg2:#1C1018; --bg3:#261822;
   --card:#241620; --card2:#2E1E2A;
-  --tx:#F5EDE8; --tx2:#C0A0B0; --tx3:#7A5868;
-  --bdr:rgba(200,140,160,.14); --bdr2:rgba(200,140,160,.25);
+  --tx:#F5EDE8; --tx2:#D8B59A; --tx3:#9A7A60;
+  --bdr:rgba(240,160,110,.14); --bdr2:rgba(240,160,110,.25);
   --sh:0 2px 16px rgba(0,0,0,.35); --sh2:0 6px 28px rgba(0,0,0,.5);
 }
 
@@ -43,7 +43,7 @@ button{font-family:inherit;cursor:pointer}
 /* ─── SPLASH ─────────────────────────────── */
 #splash{
   position:fixed;inset:0;z-index:9999;
-  background:linear-gradient(160deg,#5C0E25 0%,#7A1230 45%,#9C1A40 80%,#C9A227 150%);
+  background:linear-gradient(160deg,#C2410C 0%,#EA580C 45%,#FB923C 80%,#C9A227 150%);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   transition:opacity .7s ease,transform .7s ease;
 }
@@ -51,18 +51,42 @@ button{font-family:inherit;cursor:pointer}
 .spl-wrap{display:flex;flex-direction:column;align-items:center;gap:0}
 .spl-emblem{
   width:96px;height:96px;border-radius:28px;
-  background:rgba(201,162,39,.15);
-  border:1.5px solid rgba(201,162,39,.35);
+  background:rgba(255,255,255,.14);
+  border:1.5px solid rgba(255,255,255,.32);
   display:flex;align-items:center;justify-content:center;
   font-size:52px;
-  box-shadow:0 0 40px rgba(201,162,39,.25);
+  box-shadow:0 0 40px rgba(255,236,210,.3);
   animation:spl-float 2.5s ease-in-out infinite;
 }
 @keyframes spl-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-8px) scale(1.04)}}
 .spl-brand{margin-top:20px;text-align:center}
 .spl-name{font-size:50px;font-weight:900;color:#FFF8F0;line-height:1;letter-spacing:-2px;text-shadow:0 0 20px rgba(255,255,255,.7),0 0 50px rgba(255,255,255,.35),0 2px 4px rgba(0,0,0,.3)}
-.spl-tagline{font-size:13px;color:rgba(255,255,255,.6);margin-top:6px;letter-spacing:.5px}
+.spl-tagline{font-family:'Cairo',sans-serif;font-size:18px;font-weight:900;color:#FFF6EC;margin-top:10px;letter-spacing:-0.3px;text-shadow:0 0 16px rgba(255,246,236,.85),0 0 38px rgba(255,224,180,.45),0 2px 5px rgba(0,0,0,.3)}
 .spl-flag{font-size:18px;margin-top:2px}
+/* ─── خط مرام الأنيق (Aref Ruqaa fallback) ─── */
+.maram{font-family:'Mirza','Cairo',serif}
+/* ─── شريط توقيع المطوّر (آخر كل صفحة) ─── */
+.credit{
+  flex-shrink:0;text-align:center;padding:6px 0 5px;
+  font-family:'Cairo',sans-serif;font-size:13px;font-weight:900;
+  letter-spacing:-0.3px;background:transparent;
+  border-top:1px solid var(--bdr,rgba(0,0,0,.06));
+}
+.credit .credit-by{font-size:9px;font-weight:400;opacity:.55;margin-left:5px;font-family:'Cairo',sans-serif}
+.credit-name{
+  font-family:'Cairo',sans-serif;font-weight:900;font-size:16px;color:#EA580C;
+  background:linear-gradient(90deg,#C2410C,#EA580C,#FFD8A8,#EA580C,#C2410C);
+  background-size:220% auto;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:credit-shine 3.5s linear infinite, credit-glow 2.4s ease-in-out infinite;
+  text-shadow:0 0 12px rgba(234,88,12,.4);
+}
+@keyframes credit-shine{0%{background-position:0% center}100%{background-position:220% center}}
+@keyframes credit-glow{0%,100%{filter:drop-shadow(0 0 3px rgba(234,88,12,.4))}50%{filter:drop-shadow(0 0 11px rgba(251,146,60,.7))}}
+[data-dark=true] .credit-name{text-shadow:0 0 14px rgba(251,146,60,.55)}
+/* ─── زر تبديل اللغة ─── */
+.lang-btn{font-size:12px!important;font-weight:900!important;letter-spacing:.5px}
 .spl-bar{
   margin-top:48px;width:120px;height:3px;
   background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;
@@ -90,8 +114,8 @@ button{font-family:inherit;cursor:pointer}
 .hdr-logo{display:flex;align-items:center;gap:11px;flex:1;min-width:0}
 .hdr-emblem{
   width:46px;height:46px;border-radius:14px;
-  background:rgba(201,162,39,.18);
-  border:1.5px solid rgba(201,162,39,.4);
+  background:rgba(255,255,255,.18);
+  border:1.5px solid rgba(255,255,255,.4);
   display:flex;align-items:center;justify-content:center;
   font-size:24px;flex-shrink:0;
 }
@@ -101,7 +125,7 @@ button{font-family:inherit;cursor:pointer}
   letter-spacing:-0.5px;
   text-shadow:0 0 12px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.25),0 1px 3px rgba(0,0,0,.3);
 }
-.hdr-sub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}
+.hdr-sub{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:170px}
 .hdr-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .hdr-btn{
   width:40px;height:40px;border-radius:12px;border:none;
@@ -145,7 +169,7 @@ button{font-family:inherit;cursor:pointer}
   position:relative;
 }
 .ni.act{color:var(--P)}
-.ni.act svg{filter:drop-shadow(0 0 6px rgba(122,18,48,.25))}
+.ni.act svg{filter:drop-shadow(0 0 6px rgba(234,88,12,.25))}
 .ni svg{width:22px;height:22px;transition:transform .2s}
 .ni.act svg{transform:scale(1.1)}
 .ni-lbl{font-size:10px;font-weight:700}
@@ -167,11 +191,11 @@ button{font-family:inherit;cursor:pointer}
   color:#fff;border:none;border-radius:16px;
   padding:0 18px;height:44px;
   font-size:13px;font-weight:800;font-family:inherit;
-  box-shadow:0 4px 16px rgba(122,18,48,.35);
+  box-shadow:0 4px 16px rgba(234,88,12,.35);
   transition:transform .15s,box-shadow .15s;
   white-space:nowrap;
 }
-.ni-add-pill:active{transform:scale(.95);box-shadow:0 2px 8px rgba(122,18,48,.25)}
+.ni-add-pill:active{transform:scale(.95);box-shadow:0 2px 8px rgba(234,88,12,.25)}
 .ni-add-icon{
   width:22px;height:22px;border-radius:7px;
   background:rgba(255,255,255,.2);
@@ -202,7 +226,7 @@ button{font-family:inherit;cursor:pointer}
   color:var(--tx2);display:flex;align-items:center;justify-content:center;
   font-size:17px;transition:all .2s;
 }
-.fltbtn.on{background:var(--P);color:#fff;border-color:var(--P);box-shadow:0 2px 10px rgba(122,18,48,.3)}
+.fltbtn.on{background:var(--P);color:#fff;border-color:var(--P);box-shadow:0 2px 10px rgba(234,88,12,.3)}
 
 /* ─── CHIPS ──────────────────────────────── */
 .chips{
@@ -222,7 +246,7 @@ button{font-family:inherit;cursor:pointer}
 .chip.on{
   background:linear-gradient(135deg,var(--P),var(--PL));
   color:#fff;border-color:transparent;
-  box-shadow:0 2px 10px rgba(122,18,48,.28);
+  box-shadow:0 2px 10px rgba(234,88,12,.28);
 }
 
 /* ─── MATCH BANNER ───────────────────────── */
@@ -328,7 +352,7 @@ button{font-family:inherit;cursor:pointer}
 }
 .finp:focus,.fsel:focus,.ftxt:focus{
   border-color:var(--P);
-  box-shadow:0 0 0 3px rgba(122,18,48,.08);
+  box-shadow:0 0 0 3px rgba(234,88,12,.08);
 }
 .ftxt{resize:none;height:80px;line-height:1.6}
 .fsel{
@@ -343,10 +367,10 @@ button{font-family:inherit;cursor:pointer}
   padding:22px;text-align:center;cursor:pointer;
   transition:all .25s;background:var(--bg2);
 }
-.uparea:hover,.uparea.drag{border-color:var(--P);background:rgba(122,18,48,.04)}
+.uparea:hover,.uparea.drag{border-color:var(--P);background:rgba(234,88,12,.04)}
 .uparea-ico{
   width:52px;height:52px;border-radius:14px;
-  background:linear-gradient(135deg,rgba(122,18,48,.1),rgba(201,162,39,.1));
+  background:linear-gradient(135deg,rgba(234,88,12,.1),rgba(201,162,39,.1));
   display:flex;align-items:center;justify-content:center;
   font-size:26px;margin:0 auto 10px;
 }
@@ -375,9 +399,9 @@ button{font-family:inherit;cursor:pointer}
 }
 .btn-p{
   background:linear-gradient(135deg,var(--P),var(--PL));
-  color:#fff;box-shadow:0 4px 18px rgba(122,18,48,.32);
+  color:#fff;box-shadow:0 4px 18px rgba(234,88,12,.32);
 }
-.btn-p:active{transform:scale(.98);box-shadow:0 2px 8px rgba(122,18,48,.2)}
+.btn-p:active{transform:scale(.98);box-shadow:0 2px 8px rgba(234,88,12,.2)}
 .btn-g{background:linear-gradient(135deg,var(--GD),var(--G));color:#18100E}
 .btn-gh{background:var(--bg2);color:var(--tx2);border:1.5px solid var(--bdr2)}
 .btn-sm{padding:8px 16px;font-size:13px;border-radius:var(--rad-sm);width:auto}
@@ -436,7 +460,7 @@ button{font-family:inherit;cursor:pointer}
   display:flex;align-items:center;gap:6px;
 }
 .dwant-ico{
-  width:22px;height:22px;background:rgba(122,18,48,.1);
+  width:22px;height:22px;background:rgba(234,88,12,.1);
   border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
 }
 .ddesc{
@@ -478,7 +502,7 @@ button{font-family:inherit;cursor:pointer}
   cursor:pointer;font-size:20px;flex-shrink:0;color:var(--tx3);
   transition:all .2s;
 }
-.btn-fav.on{background:rgba(122,18,48,.1);color:var(--P);border-color:rgba(122,18,48,.3)}
+.btn-fav.on{background:rgba(234,88,12,.1);color:var(--P);border-color:rgba(234,88,12,.3)}
 
 .stitle{
   font-size:15px;font-weight:800;color:var(--tx);
@@ -554,7 +578,7 @@ button{font-family:inherit;cursor:pointer}
 .fopt.sel{
   background:linear-gradient(135deg,var(--P),var(--PL));
   color:#fff;border-color:transparent;
-  box-shadow:0 2px 8px rgba(122,18,48,.25);
+  box-shadow:0 2px 8px rgba(234,88,12,.25);
 }
 
 /* ─── HOW IT WORKS ───────────────────────── */
@@ -580,7 +604,7 @@ button{font-family:inherit;cursor:pointer}
 .stxt h4{font-size:14px;font-weight:800;color:var(--tx)}
 .stxt p{font-size:13px;color:var(--tx2);margin-top:3px;line-height:1.55}
 .tipcard{
-  background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(122,18,48,.07));
+  background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(234,88,12,.07));
   border:1.5px solid rgba(201,162,39,.3);border-radius:var(--rad-lg);
   padding:16px;margin-top:4px;
 }
@@ -604,7 +628,7 @@ button{font-family:inherit;cursor:pointer}
 .nbar.show{transform:translateY(0)}
 .nbar-ico{
   width:38px;height:38px;border-radius:10px;
-  background:linear-gradient(135deg,rgba(122,18,48,.12),rgba(201,162,39,.12));
+  background:linear-gradient(135deg,rgba(234,88,12,.12),rgba(201,162,39,.12));
   display:flex;align-items:center;justify-content:center;font-size:18px;
   flex-shrink:0;
 }
@@ -651,7 +675,7 @@ button{font-family:inherit;cursor:pointer}
   border:2px solid var(--bdr);background:var(--bg2);
   cursor:pointer;transition:all .2s;
 }
-.pay-method.sel{border-color:var(--P);background:rgba(122,18,48,.06)}
+.pay-method.sel{border-color:var(--P);background:rgba(234,88,12,.06)}
 .pay-method-ico{font-size:24px;flex-shrink:0}
 .pay-method-info{flex:1}
 .pay-method-name{font-size:14px;font-weight:800;color:var(--tx)}
@@ -663,7 +687,7 @@ button{font-family:inherit;cursor:pointer}
   width:100%;padding:15px;border-radius:14px;border:none;
   background:linear-gradient(135deg,var(--P),var(--PL));
   color:#fff;font-family:inherit;font-size:16px;font-weight:900;
-  cursor:pointer;box-shadow:0 6px 24px rgba(122,18,48,.35);
+  cursor:pointer;box-shadow:0 6px 24px rgba(234,88,12,.35);
   display:flex;align-items:center;justify-content:center;gap:8px;
   transition:all .2s;
 }
@@ -679,8 +703,8 @@ button{font-family:inherit;cursor:pointer}
 }
 .btn-wa-locked:active{background:var(--bg3)}
 .lock-pill{
-  font-size:11px;background:rgba(122,18,48,.08);color:var(--P);
-  border:1px solid rgba(122,18,48,.2);border-radius:20px;
+  font-size:11px;background:rgba(234,88,12,.08);color:var(--P);
+  border:1px solid rgba(234,88,12,.2);border-radius:20px;
   padding:2px 8px;font-weight:700;
 }
 /* success overlay */
@@ -701,9 +725,9 @@ button{font-family:inherit;cursor:pointer}
 .pay-success-s{font-size:13px;color:var(--tx3);margin-bottom:24px;line-height:1.5}
 /* revenue badge in header */
 .rev-badge{
-  background:rgba(201,162,39,.2);border:1px solid rgba(201,162,39,.4);
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);
   border-radius:10px;padding:3px 8px;
-  font-size:11px;font-weight:800;color:#C9A227;
+  font-size:11px;font-weight:800;color:#FFF8F0;
   display:none;align-items:center;gap:3px;
 }
 
@@ -739,7 +763,7 @@ button{font-family:inherit;cursor:pointer}
 .ow-badge{font-size:10px;padding:2px 7px;border-radius:20px;background:var(--bg3);color:var(--tx2);font-weight:700;border:1px solid var(--bdr)}
 .ow-badge.trusted{background:rgba(40,180,80,.1);color:#1a7a3a;border-color:rgba(40,180,80,.3)}
 .ow-badge.active{background:rgba(201,162,39,.12);color:var(--GD);border-color:rgba(201,162,39,.3)}
-.ow-badge.new{background:rgba(122,18,48,.08);color:var(--P);border-color:rgba(122,18,48,.2)}
+.ow-badge.new{background:rgba(234,88,12,.08);color:var(--P);border-color:rgba(234,88,12,.2)}
 .card-rating{font-size:11px;color:var(--G);font-weight:700;display:inline-flex;align-items:center;gap:2px}
 .owner-rating .btn{width:auto;flex-shrink:0;flex-grow:0;padding:7px 12px;font-size:12px}
 
@@ -782,7 +806,7 @@ button{font-family:inherit;cursor:pointer}
 .msg-other{align-self:flex-start;background:var(--card);color:var(--tx);border:1px solid var(--bdr);border-radius:18px 18px 18px 4px;padding:10px 13px;max-width:78%;font-size:13px;line-height:1.5;word-break:break-word}
 .msg-sys{align-self:center;background:var(--bg2);color:var(--tx3);font-size:11px;padding:6px 14px;border-radius:20px;font-weight:600;text-align:center;max-width:90%}
 .msg-warn{align-self:center;background:rgba(220,38,38,.08);color:#DC2626;border:1px solid rgba(220,38,38,.15);font-size:11px;padding:8px 14px;border-radius:12px;font-weight:600;text-align:center;max-width:90%}
-.msg-stage{align-self:center;background:linear-gradient(135deg,rgba(122,18,48,.08),rgba(201,162,39,.08));border:1px solid rgba(201,162,39,.2);color:var(--P);font-size:12px;padding:7px 16px;border-radius:20px;font-weight:800;text-align:center}
+.msg-stage{align-self:center;background:linear-gradient(135deg,rgba(234,88,12,.08),rgba(201,162,39,.08));border:1px solid rgba(201,162,39,.2);color:var(--P);font-size:12px;padding:7px 16px;border-radius:20px;font-weight:800;text-align:center}
 .msg-time{font-size:10px;opacity:.55;margin-top:3px;direction:ltr}
 .msg-mine .msg-time{text-align:left}
 .msg-other .msg-time{text-align:right}
@@ -790,7 +814,7 @@ button{font-family:inherit;cursor:pointer}
 .chat-inp-area{background:var(--card);border-top:1px solid var(--bdr);padding:10px 12px calc(10px + var(--sb));display:flex;gap:9px;align-items:flex-end;flex-shrink:0}
 .chat-inp{flex:1;border:1.5px solid var(--bdr2);border-radius:20px;padding:10px 16px;font-family:inherit;font-size:14px;background:var(--bg2);color:var(--tx);resize:none;max-height:90px;outline:none;line-height:1.4}
 .chat-inp:focus{border-color:var(--P)}
-.chat-send{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--P),var(--PL));border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(122,18,48,.3);transition:.15s}
+.chat-send{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--P),var(--PL));border:none;color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(234,88,12,.3);transition:.15s}
 .chat-send:active{transform:scale(.92)}
 /* deal action */
 .deal-action-bar{background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.05));border-top:1px solid rgba(201,162,39,.25);padding:10px 14px calc(var(--sb) + 10px);flex-shrink:0}
@@ -811,7 +835,7 @@ button{font-family:inherit;cursor:pointer}
 .no-chats-t{font-size:17px;font-weight:800;color:var(--tx2);margin-bottom:8px}
 .no-chats-s{font-size:13px;color:var(--tx3);line-height:1.6}
 /* chat btn in detail */
-.btn-chat{flex:1;padding:13px 10px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 14px rgba(122,18,48,.3);transition:.15s}
+.btn-chat{flex:1;padding:13px 10px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 14px rgba(234,88,12,.3);transition:.15s}
 .btn-chat:active{transform:scale(.98)}
 
 /* ─── DELIVERY ──────────────────────────── */
@@ -824,7 +848,7 @@ button{font-family:inherit;cursor:pointer}
 .dlv-section-t{font-size:11px;font-weight:700;color:var(--tx3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
 .dlv-addr-card{background:var(--card);border-radius:14px;padding:14px;border:1.5px solid var(--bdr);display:flex;gap:12px;align-items:flex-start}
 .dlv-addr-ico{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
-.dlv-addr-ico.from{background:rgba(122,18,48,.1)}.dlv-addr-ico.to{background:rgba(34,197,94,.1)}
+.dlv-addr-ico.from{background:rgba(234,88,12,.1)}.dlv-addr-ico.to{background:rgba(34,197,94,.1)}
 .dlv-addr-info{flex:1}.dlv-addr-label{font-size:11px;font-weight:700;color:var(--tx3);margin-bottom:2px}
 .dlv-addr-name{font-size:14px;font-weight:800;color:var(--tx)}.dlv-addr-loc{font-size:12px;color:var(--tx3);margin-top:2px}
 .dlv-addr-input{width:100%;border:1.5px solid var(--bdr2);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:13px;background:var(--bg2);color:var(--tx);outline:none;margin-top:6px;box-sizing:border-box}
@@ -864,7 +888,7 @@ button{font-family:inherit;cursor:pointer}
 .wl-add-btn{padding:10px 16px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap}
 .wl-cats{display:flex;gap:6px;padding:10px 16px;overflow-x:auto;flex-shrink:0}.wl-cats::-webkit-scrollbar{display:none}
 .wl-cat{padding:5px 10px;border-radius:16px;border:1.5px solid var(--bdr2);background:var(--bg2);font-family:inherit;font-size:11px;font-weight:700;color:var(--tx2);cursor:pointer;white-space:nowrap;transition:.15s}
-.wl-cat.on{border-color:var(--P);background:rgba(122,18,48,.08);color:var(--P)}
+.wl-cat.on{border-color:var(--P);background:rgba(234,88,12,.08);color:var(--P)}
 .wl-list{overflow-y:auto;padding:12px 16px;flex:1}
 .wl-item{display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:13px;background:var(--bg2);border:1px solid var(--bdr);margin-bottom:8px}
 .wl-item-ico{font-size:20px;flex-shrink:0}.wl-item-t{flex:1;font-size:13px;font-weight:700;color:var(--tx)}.wl-item-cat{font-size:10px;color:var(--tx3);margin-top:2px}
@@ -907,12 +931,12 @@ button{font-family:inherit;cursor:pointer}
 .sz-title{font-size:17px;font-weight:900;color:var(--tx)}.sz-sub{font-size:12px;color:var(--tx3);margin-top:2px}
 .sz-filter{display:flex;gap:8px;padding:10px 16px;overflow-x:auto;flex-shrink:0}.sz-filter::-webkit-scrollbar{display:none}
 .sz-chip{padding:6px 12px;border-radius:20px;border:1.5px solid var(--bdr2);background:var(--bg2);font-family:inherit;font-size:12px;font-weight:700;color:var(--tx2);cursor:pointer;white-space:nowrap;transition:.2s}
-.sz-chip.on{border-color:var(--P);background:rgba(122,18,48,.08);color:var(--P)}
+.sz-chip.on{border-color:var(--P);background:rgba(234,88,12,.08);color:var(--P)}
 .sz-list{overflow-y:auto;padding:0 14px 8px;flex:1}
 .sz-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;border:1.5px solid var(--bdr);background:var(--card);margin-bottom:8px;cursor:pointer;transition:.2s}
 .sz-item:active{background:var(--bg2)}.sz-item.unavail{opacity:.5;cursor:not-allowed}
 .sz-ico{width:44px;height:44px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.sz-ico.mall{background:rgba(122,18,48,.08)}.sz-ico.gas{background:rgba(251,146,60,.12)}.sz-ico.police{background:rgba(30,77,123,.1)}.sz-ico.hospital{background:rgba(34,197,94,.1)}.sz-ico.metro{background:rgba(99,102,241,.1)}
+.sz-ico.mall{background:rgba(234,88,12,.08)}.sz-ico.gas{background:rgba(251,146,60,.12)}.sz-ico.police{background:rgba(30,77,123,.1)}.sz-ico.hospital{background:rgba(34,197,94,.1)}.sz-ico.metro{background:rgba(99,102,241,.1)}
 .sz-info{flex:1}.sz-name{font-size:13px;font-weight:800;color:var(--tx)}.sz-meta{font-size:11px;color:var(--tx3);margin-top:2px;display:flex;gap:8px}
 .sz-dist{font-size:11px;font-weight:700;color:var(--P);flex-shrink:0}
 .sz-avail-badge{font-size:9px;padding:2px 6px;border-radius:8px;font-weight:700}
@@ -984,7 +1008,7 @@ button{font-family:inherit;cursor:pointer}
 .kyc-pending-pill{display:inline-flex;align-items:center;gap:4px;background:rgba(251,146,60,.1);border:1px solid rgba(251,146,60,.3);border-radius:12px;padding:3px 8px;font-size:10px;font-weight:700;color:#EA580C}
 /* ─── STATS DASHBOARD ────────────────────── */
 .stats-screen{padding:0!important;overflow-y:auto!important}
-.stats-hero{background:linear-gradient(135deg,#5C0E25,#7A1230);padding:28px 20px 36px;position:relative;overflow:hidden}
+.stats-hero{background:linear-gradient(135deg,#C2410C,#EA580C);padding:28px 20px 36px;position:relative;overflow:hidden}
 .stats-hero::after{content:'📊';position:absolute;top:-10px;left:-10px;font-size:120px;opacity:.05;line-height:1;pointer-events:none}
 .stats-hero-eyebrow{font-size:10px;color:rgba(255,255,255,.5);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
 .stats-hero-t{font-size:13px;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:4px}
@@ -1007,7 +1031,7 @@ button{font-family:inherit;cursor:pointer}
 .stats-model{margin:0 16px 12px}.stats-model-t{font-size:14px;font-weight:900;color:var(--tx);margin-bottom:10px}
 .model-row{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:8px;border:1px solid var(--bdr)}
 .model-ico{font-size:20px;flex-shrink:0}.model-info{flex:1}.model-name{font-size:13px;font-weight:800;color:var(--tx)}.model-sub{font-size:11px;color:var(--tx3);margin-top:1px}.model-rev{font-size:15px;font-weight:900;color:var(--P);flex-shrink:0}
-.stats-cta-wrap{margin:0 16px 24px}.stats-cta{width:100%;padding:15px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(122,18,48,.3)}
+.stats-cta-wrap{margin:0 16px 24px}.stats-cta{width:100%;padding:15px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(234,88,12,.3)}
 
 /* ─── TOAST ──────────────────────────────── */
 .toast{
@@ -1042,20 +1066,38 @@ button{font-family:inherit;cursor:pointer}
 <!-- ═══ SPLASH ════════════════════════════════════ -->
 <div id="splash">
   <div class="spl-wrap">
-    <div class="spl-emblem"><svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M38 14H18a4 4 0 0 0-4 4v4" stroke="#FFF8F0" stroke-width="3" stroke-linecap="round"/>
-  <path d="M34 10l4 4-4 4" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 40H36a4 4 0 0 0 4-4v-4" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
-  <path d="M20 44l-4-4 4-4" stroke="#FFF8F0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <div class="spl-emblem"><svg width="60" height="60" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M52 75 C52 64 60 56 71 56 L140 56" stroke="#FFF8F0" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M123 40 L142 56 L123 72" stroke="#FFF8F0" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M140 117 C140 128 132 136 121 136 L52 136" stroke="#FFE0B2" stroke-width="11" stroke-linecap="round" fill="none"/>
+  <path d="M69 120 L50 136 L69 152" stroke="#FFE0B2" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg></div>
     <div class="spl-brand">
       <div class="spl-name">بدّلها</div>
-      <div class="spl-tagline">سوق التبادل والمقايضة</div>
+      <div class="spl-tagline">سوق التبادل في قطر</div>
       <div class="spl-flag">🇶🇦</div>
     </div>
   </div>
   <div class="spl-bar"><div class="spl-bar-fill"></div></div>
 </div>
+<script>
+/* SPLASH FAILSAFE — runs immediately, independent of the main app script.
+   Guarantees the splash never stays frozen, even if app JS errors out. */
+(function(){
+  function killSplash(){
+    var s=document.getElementById('splash');
+    if(!s||s.style.display==='none')return;
+    s.classList.add('hide');
+    setTimeout(function(){s.style.display='none';},700);
+  }
+  // tap anywhere to skip
+  var sp=document.getElementById('splash');
+  if(sp)sp.addEventListener('click',killSplash);
+  // hard time-based fallbacks (3s normal, 6s hard fallback)
+  setTimeout(killSplash,3000);
+  setTimeout(killSplash,6000);
+})();
+</script>
 
 <!-- ═══ APP ═══════════════════════════════════════ -->
 <div id="app">
@@ -1063,11 +1105,11 @@ button{font-family:inherit;cursor:pointer}
   <!-- HEADER -->
   <div id="header">
     <div class="hdr-logo">
-      <div class="hdr-emblem"><svg width="26" height="26" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M38 14H18a4 4 0 0 0-4 4v4" stroke="#FFF8F0" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M34 10l4 4-4 4" stroke="#C9A227" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M16 40H36a4 4 0 0 0 4-4v-4" stroke="#C9A227" stroke-width="3.5" stroke-linecap="round"/>
-  <path d="M20 44l-4-4 4-4" stroke="#FFF8F0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="hdr-emblem"><svg width="28" height="28" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M52 75 C52 64 60 56 71 56 L140 56" stroke="#FFF8F0" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M123 40 L142 56 L123 72" stroke="#FFF8F0" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M140 117 C140 128 132 136 121 136 L52 136" stroke="#FFE0B2" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <path d="M69 120 L50 136 L69 152" stroke="#FFE0B2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 </svg></div>
       <div class="hdr-brand">
         <div class="hdr-name">بدّلها</div>
@@ -1076,6 +1118,7 @@ button{font-family:inherit;cursor:pointer}
     </div>
     <div class="hdr-actions">
       <div class="rev-badge" id="revBadge"></div>
+      <button class="hdr-btn lang-btn" id="langBtn" onclick="A.toggleLang()" title="Language / اللغة">EN</button>
       <button class="hdr-btn" id="ntfBtn" onclick="A.checkMatches()" title="التطابقات">
         🔔
         <div class="hdr-btn-badge" id="ntfDot" style="display:none"></div>
@@ -1164,6 +1207,9 @@ button{font-family:inherit;cursor:pointer}
     </div>
 
   </div><!-- /screens -->
+
+  <!-- DEVELOPER CREDIT (آخر كل صفحة) -->
+  <div class="credit"><span class="credit-by" data-i18n="تطوير">تطوير</span><span class="credit-name">بلال الأنصاري</span></div>
 
   <!-- BOTTOM NAV -->
   <div id="bnav">
@@ -1626,22 +1672,31 @@ const A={
   detImgs:[],detIdx:0,ntTimer:null,_tf:{},
 
   init(){
-    const dk=S.g('bdl_dk',null);
-    if(dk!=null)document.body.setAttribute('data-dark',dk);
-    document.getElementById('dkBtn').textContent=this.isDark()?'☀️':'🌙';
-    if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-    this.renderChips();this.renderAds();this.renderHow();this.updBadges();this.checkMBanner();this.updRevBadge();
-    try{this._initQuickRow();}catch(e){}
-    try{this._updateMatchBanner();}catch(e){}
+    // ── Splash hide is set up FIRST so nothing below can block it ──
     const _hideSplash=()=>{
       const s=document.getElementById('splash');
       if(!s||s.style.display==='none')return;
       s.classList.add('hide');
       setTimeout(()=>{s.style.display='none';},700);
     };
-    document.getElementById('splash').addEventListener('click',_hideSplash,{once:true});
-    setTimeout(_hideSplash,1800);
-    setTimeout(_hideSplash,5000);
+    try{document.getElementById('splash').addEventListener('click',_hideSplash,{once:true});}catch(e){}
+    setTimeout(_hideSplash,3000);
+    setTimeout(_hideSplash,6000);
+    // ── Everything else is guarded so a failure never freezes the splash ──
+    try{
+      const dk=S.g('bdl_dk',null);
+      if(dk!=null)document.body.setAttribute('data-dark',dk);
+      const _dk=document.getElementById('dkBtn');if(_dk)_dk.textContent=this.isDark()?'☀️':'🌙';
+    }catch(e){}
+    try{if('serviceWorker' in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});}catch(e){}
+    try{this.renderChips();}catch(e){}
+    try{this.renderAds();}catch(e){}
+    try{this.renderHow();}catch(e){}
+    try{this.updBadges();}catch(e){}
+    try{this.checkMBanner();}catch(e){}
+    try{this.updRevBadge();}catch(e){}
+    try{this._initQuickRow();}catch(e){}
+    try{this._updateMatchBanner();}catch(e){}
   },
 
   isDark(){
@@ -2596,7 +2651,196 @@ Object.assign(A,{
    Mrsool: POST https://api.mrsool.co/v4/orders
 */
 
-document.addEventListener('DOMContentLoaded',()=>A.init());
+/* ═══════════════════ i18N (AR ⇄ EN) ═══════════════════ */
+const DICT={
+  // brand / header
+  "سوق التبادل في قطر 🇶🇦":"Qatar Barter Market 🇶🇦",
+  "سوق التبادل في قطر":"Qatar's Barter Marketplace",
+  "تطوير":"by",
+  // nav
+  "الرئيسية":"Home","المفضلة":"Favorites","أضف إعلانك":"Post Ad","رسائلي":"Messages","إعلاناتي":"My Ads",
+  // tooltips
+  "التطابقات":"Matches","الوضع المظلم":"Dark Mode","كيف يعمل؟":"How it works",
+  // search / home
+  "ابحث عن إعلان...":"Search ads...",
+  "ما لقيناش نتايج":"No results found",
+  "جرّب تغيّر الفلتر أو تبحث بكلمة تانية":"Try changing the filters or another search",
+  // categories
+  "الكل":"All","إلكترونيات":"Electronics","أثاث":"Furniture","ملابس":"Clothing","كتب":"Books",
+  "أجهزة منزلية":"Appliances","ألعاب أطفال":"Kids' Toys","رياضة":"Sports","أخرى":"Other",
+  "🌐 الكل":"🌐 All",
+  // conditions
+  "جديد":"New","مستعمل - ممتاز":"Used - Excellent","مستعمل":"Used",
+  "✨ جديد":"✨ New","⭐ ممتاز":"⭐ Excellent","💜 مستعمل":"💜 Used",
+  // areas
+  "الدوحة":"Doha","الريان":"Al Rayyan","الوكرة":"Al Wakrah","الخور":"Al Khor","الغرافة":"Al Gharrafa",
+  "مشيرب":"Msheireb","لوسيل":"Lusail","أم سلال":"Umm Salal","الظعاين":"Al Daayen","الشمال":"Al Shamal",
+  "الزعين":"Al Zaeen","المظيلة":"Al Muaither","السد":"Al Sadd","فريج":"Freej","أبو هامور":"Abu Hamour",
+  // ad card / detail
+  "عايز: ":"Wants: ","عايز:":"Wants:","إعلانات مشابهة":"Similar ads",
+  "القسم":"Category","الحالة":"Condition","المنطقة":"Area","تاريخ النشر":"Posted",
+  "لا يوجد تقييمات بعد":"No ratings yet","⭐ قيّم":"⭐ Rate",
+  "💬 راسل المعلن":"💬 Message seller","🚩 الإبلاغ عن هذا الإعلان":"🚩 Report this ad",
+  // filter
+  "🔎 فلاتر البحث":"🔎 Search filters","↺ إعادة تعيين":"↺ Reset","✅ تطبيق الفلتر":"✅ Apply filters",
+  // add form
+  "✏️ تعديل الإعلان":"✏️ Edit ad","✦ إعلان جديد":"✦ New ad",
+  "عدّل بيانات إعلانك":"Edit your ad details","أضف إعلانك وابدأ التبادل مجاناً":"Post your ad and start bartering — free",
+  "🟢 عندي":"🟢 I have","🔁 عايز بدلها":"🔁 I want in exchange","📝 وصف إضافي":"📝 Description",
+  "📍 المنطقة":"📍 Area","👤 اسمك":"👤 Your name","📱 واتساب":"📱 WhatsApp",
+  "مثال: آيفون 13 برو ماكس":"e.g. iPhone 13 Pro Max","مثال: لاب توب أو سرفس برو":"e.g. Laptop or Surface Pro",
+  "تفاصيل الحالة، المواصفات، ملاحظات مهمة...":"Condition, specs, important notes...",
+  "الاسم":"Name","اضغط لإضافة صور":"Tap to add photos",
+  // stats dashboard
+  "لوحة تحكم المستثمر":"Investor Dashboard","إجمالي إيرادات المنصة":"Total Platform Revenue",
+  "143 صفقة مكتملة • يونيو 2026":"143 completed deals • June 2026","📈 +51% عن الشهر الماضي":"📈 +51% vs last month",
+  "مستخدم مسجّل":"Registered users","↑ +89 هذا الأسبوع":"↑ +89 this week",
+  "إعلان نشط":"Active ads","↑ +23 اليوم":"↑ +23 today",
+  "صفقة هذا الشهر":"Deals this month","↑ نمو 51%":"↑ 51% growth",
+  "متوسط التقييم":"Avg. rating","من 612 تقييم":"from 612 ratings",
+  "📊 الصفقات المكتملة — آخر 6 أشهر":"📊 Completed deals — last 6 months",
+  "🎯 حجم السوق المستهدف":"🎯 Target market size","💡 نموذج الإيرادات":"💡 Revenue model",
+  "إعلانات مميزة Boost":"Boosted ads (Boost)","25 ر.ق / أسبوع — ظهور أعلى النتائج":"QAR 25 / week — top placement",
+  "عمولة التوصيل":"Delivery commission","5 ر.ق من كل طلب توصيل":"QAR 5 per delivery order",
+  "اشتراك ذهبي Gold":"Gold subscription","29 ر.ق/شهر — إعلانات غير محدودة":"QAR 29/month — unlimited ads",
+  "📄 تحميل Pitch Deck كاملاً":"📄 Download full Pitch Deck",
+  "قطر:":"Qatar:","مصر:":"Egypt:","السوق الإجمالي:":"Total market:","الهدف 12 شهر:":"12-month goal:",
+  // chat list
+  "💬 رسائلي":"💬 My Messages","صفقاتك الجارية والمكتملة":"Your ongoing & completed deals",
+  // wishlist
+  "🎯 قائمة رغباتي":"🎯 My Wishlist","أضف ما تبحث عنه وسنطابقك تلقائياً":"Add what you want — we'll match you",
+  "+ أضف":"+ Add","مثال: آيفون 14، بلايستيشن 5...":"e.g. iPhone 14, PlayStation 5...",
+  "🔁 ابحث عن تطابقات الآن":"🔁 Find matches now",
+  // match modal
+  "🔁 تطابقاتك الذكية":"🔁 Your Smart Matches","وجدنا لك أشخاصاً يملكون ما تريد":"People who have what you want",
+  "تطابق مُحتمل":"Potential matches","أعلى تطابق":"Top match","متوسط التوافق":"Avg. match",
+  // safe zones
+  "📍 نقاط التسليم الآمنة":"📍 Safe Exchange Spots","اختر مكان آمن وعام للتسليم":"Pick a safe, public spot",
+  "🗺️ الكل":"🗺️ All","🏪 مولات":"🏪 Malls","🚔 شرطة":"🚔 Police","⛽ محطات":"⛽ Stations","🚇 مترو":"🚇 Metro",
+  // trust
+  "🔵 دائرة الثقة":"🔵 Trust Circle","مستوى ثقتك بهذا الشخص بناءً على شبكة معارفك":"Your trust level based on your network",
+  "👥 أصدقاء مشتركون":"👥 Mutual friends","صفقات مشتركة":"Shared deals","معارف مشتركة":"Mutual contacts",
+  "تقييم الشبكة":"Network rating","➕ أضفه لدائرة ثقتك":"➕ Add to your trust circle",
+  // AI
+  "تقييم ذكي للسلعة":"Smart Item Valuation","AI يحلل صورتك ويقترح السعر والفئة تلقائياً":"AI analyzes your photo & suggests price + category",
+  "جاري تحليل الصورة...":"Analyzing image...","يستغرق 2-3 ثوانٍ":"Takes 2-3 seconds",
+  "🤖 تحليل AI مكتمل":"🤖 AI analysis complete","الفئة المقترحة":"Suggested category","الطلب في السوق":"Market demand",
+  "السعر العادل المقترح":"Suggested fair price","بناءً على 847 إعلان مشابه في المنصة":"Based on 847 similar ads",
+  "✅ استخدم هذا التقييم في إعلاني":"✅ Use this valuation","تقييم يدوي":"Manual valuation",
+  // escrow
+  "🛡️ الدفع الآمن (Escrow)":"🛡️ Secure Payment (Escrow)","فلوسك محمية حتى تستلم سلعتك":"Your money is protected until you receive your item",
+  "💰 المبلغ المحتجز لدى بدّلها":"💰 Amount held by Baddilha","يُحرر للبائع بعد تأكيدك للاستلام":"Released to seller after you confirm receipt",
+  "دفع المشتري":"Buyer paid","تم خصم المبلغ من محفظتك":"Amount deducted from your wallet",
+  "احتجاز المبلغ":"Amount held","بدّلها تحتفظ بالمبلغ بأمان":"Baddilha holds it safely",
+  "التوصيل جارٍ":"Delivery in progress","انتظر وصول السلعة":"Wait for the item to arrive",
+  "تأكيد الاستلام":"Confirm receipt",'اضغط "استلمت" لإتمام الصفقة':'Tap "Received" to complete',
+  "تحويل للبائع":"Transfer to seller","يستلم البائع المبلغ فوراً":"Seller is paid instantly",
+  "📦 استلمت السلعة — أطلق المبلغ":"📦 I received it — release funds","⚠️ فتح نزاع — السلعة غير مطابقة":"⚠️ Open dispute — item mismatch",
+  // KYC
+  "التحقق من الهوية":"Identity Verification",'احصل على شارت "موثّق 🛡️" ويثق بك المزيد من المستخدمين':'Get a "Verified 🛡️" badge and earn more trust',
+  // delivery
+  "🚚 طلب التوصيل":"🚚 Delivery Request","توصيل آمن بين الطرفين":"Safe delivery between both parties","🚚 اطلب التوصيل الآن":"🚚 Order delivery now",
+  // payment
+  "كشف بيانات التواصل":"Reveal Contact Details","ادفع رسوم الصفقة للتواصل مع المعلن":"Pay the deal fee to contact the seller",
+  "رسوم الصفقة الواحدة":"Single deal fee","تشمل الوصول لرقم الواتساب":"Includes WhatsApp access",
+  "دفع سريع بالوجه أو البصمة":"Fast pay with Face/Touch ID","دفع سريع من جوجل":"Fast pay with Google",
+  "محافظ إلكترونية":"E-wallets","بطاقة بنكية":"Bank card","فيزا أو ماستركارد":"Visa or Mastercard",
+  "🔐 دفع آمن ومشفر · لن يتم خصم أي مبلغ إضافي":"🔐 Secure encrypted payment · no extra charges",
+  "تم الدفع بنجاح!":"Payment successful!","📱 تواصل الآن عبر واتساب":"📱 Contact now on WhatsApp",
+  // rating
+  "قيّم المعلن":"Rate the seller","شاركنا تجربتك مع هذا المعلن":"Share your experience with this seller",
+  "اكتب تعليقك (اختياري)...":"Write a comment (optional)...","✅ إرسال التقييم":"✅ Submit rating","إلغاء":"Cancel",
+  // quick row + dynamic badges
+  "رغباتي":"Wishlist","نقاط آمنة":"Safe Spots","تقييم ذكي":"AI Valuation","الدفع الآمن":"Secure Pay","التحقق":"Verify",
+  "🔁 تطابق":"🔁 Match","تطابق مُحتمل لك!":"Potential matches for you!",
+  "بناءً على قائمة رغباتك — اضغط للتفاصيل":"Based on your wishlist — tap for details",
+  "مشاهدة":"views","صفقة":"deal","صفقات":"deals","تطابق":"match",
+  // how it works steps
+  "انشر إعلانك":"Post your ad","لقي تطابق":"Find a match","تواصل عبر واتساب":"Chat on WhatsApp","تبادلوا":"Exchange",
+  // sample ads (have / want)
+  "آيباد برو M1 - 11 بوصة + كيبورد ماجيك":"iPad Pro M1 - 11\" + Magic Keyboard","لاب توب للشغل أو جيمينج":"Laptop for work or gaming",
+  "طقم أريكة L-Shape فاخر - 7 مقاعد":"Luxury L-Shape sofa set - 7 seats","تلفزيون OLED 65 بوصة أو سرير كينج":"OLED 65\" TV or king bed",
+  "دراجة رياضية Trek FX2 - 21 سرعة":"Trek FX2 sports bike - 21 speed","سكوتر كهربائي أو معدات جيم منزلية":"E-scooter or home gym gear",
+  "مجموعة روايات إنجليزية - 25 كتاب":"English novels set - 25 books","كتب عربية أو اشتراك كورسات أونلاين":"Arabic books or online course",
+  "بلايستيشن 5 + 3 ألعاب":"PlayStation 5 + 3 games","لاب توب سرفس برو أو ماك بوك":"Surface Pro or MacBook",
+  "فستان زفاف أبيض تركي - مقاس M":"Turkish white wedding dress - size M","مجوهرات ذهبية عيار 18 أو ساعة فاخرة":"18K gold jewelry or luxury watch",
+  "مكيف سبليت Carrier - 2 طن":"Carrier split AC - 2 ton","غسالة أوتوماتيك أو ثلاجة كبيرة":"Washing machine or large fridge",
+  "ليغو Technic كبير + تراك سيارات":"Large Lego Technic + car track","دراجة أطفال أو ألعاب سن 5-8 سنين":"Kids bike or toys age 5-8",
+  "دمبلز وأوزان منزلية - طقم 50 كيلو":"Dumbbells & weights - 50kg set","دراجة رياضية أو سكوتر كهربائي":"Sports bike or e-scooter",
+  "كاميرا Sony Alpha A6400 + عدسة 18-135":"Sony Alpha A6400 + 18-135 lens","آيفون 14 برو أو آيفون 15":"iPhone 14 Pro or iPhone 15",
+};
+const AR2EN=DICT, EN2AR={};
+for(const k in DICT){ if(!(DICT[k] in EN2AR)) EN2AR[DICT[k]]=k; }
+// keys sorted longest-first for safe substring replacement
+const SORTED_AR=Object.keys(AR2EN).sort((a,b)=>b.length-a.length);
+// dynamic word-level rules (only on short label nodes)
+const WORD_AR2EN=[[/مشاهدة/g,"views"],[/مشاهدات/g,"views"],[/ر\.ق/g,"QAR"],[/ريال/g,"QAR"]];
+const SUB_MAX=36; // only do substring/word replacement on short nodes (avoid garbling paragraphs)
+
+let LANG=S.g('bdl_lang','ar');
+
+function _trans(txt,map){
+  const key=txt.trim();
+  if(map[key]!=null){ return txt.replace(key,map[key]); }
+  return null;
+}
+function _walk(node){
+  if(LANG==='ar') return; // source is Arabic; nothing to do
+  const map=AR2EN;
+  const tw=document.createTreeWalker(node,NodeFilter.SHOW_TEXT,null);
+  const nodes=[]; let n; while(n=tw.nextNode()) nodes.push(n);
+  for(const t of nodes){
+    const raw=t.nodeValue; if(!raw||!raw.trim())continue;
+    const full=_trans(raw,map);
+    if(full!=null){ t.nodeValue=full; continue; }
+    if(raw.trim().length>SUB_MAX) continue; // skip long paragraphs to avoid garbling
+    // substring replacement of known phrases (longest first) + word rules
+    let v=raw,changed=false;
+    for(const k of SORTED_AR){ if(v.indexOf(k)>-1){ v=v.split(k).join(map[k]); changed=true; } }
+    for(const [re,rep] of WORD_AR2EN){ if(re.test(v)){ v=v.replace(re,rep); changed=true; } }
+    if(changed) t.nodeValue=v;
+  }
+  // attributes: placeholders + titles
+  const els=node.querySelectorAll?node.querySelectorAll('[placeholder],[title]'):[];
+  els.forEach(el=>{
+    ['placeholder','title'].forEach(a=>{
+      const val=el.getAttribute(a); if(!val)return;
+      const tr=_trans(val,map); if(tr!=null) el.setAttribute(a,tr);
+    });
+  });
+}
+let _obs=null;
+function _startObserver(){
+  if(_obs) return;
+  _obs=new MutationObserver(muts=>{
+    if(LANG!=='en')return;
+    for(const m of muts){ m.addedNodes.forEach(nd=>{ if(nd.nodeType===1) _walk(nd); else if(nd.nodeType===3){ const f=_trans(nd.nodeValue,AR2EN); if(f!=null)nd.nodeValue=f; } }); }
+  });
+  _obs.observe(document.body,{childList:true,subtree:true});
+}
+
+Object.assign(A,{
+  toggleLang(){ this.applyLang(LANG==='ar'?'en':'ar'); },
+  applyLang(lang){
+    LANG=lang; S.s('bdl_lang',lang);
+    document.documentElement.setAttribute('lang',lang);
+    // keep RTL layout intact in both languages (flipping to LTR breaks the RTL design)
+    const lb=document.getElementById('langBtn'); if(lb) lb.textContent=lang==='en'?'ع':'EN';
+    _startObserver();
+    if(lang==='en'){ _walk(document.body); }
+    else { try{ location.reload(); }catch(e){} } // restore pristine Arabic from source
+  },
+  _i18nBoot(){
+    _startObserver();
+    if(LANG==='en'){
+      document.documentElement.setAttribute('lang','en');
+      const lb=document.getElementById('langBtn'); if(lb) lb.textContent='ع';
+      _walk(document.body);
+    }
+  },
+});
+
+document.addEventListener('DOMContentLoaded',()=>{A.init();A._i18nBoot();});
 </script>
 </body>
 </html>

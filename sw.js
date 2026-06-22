@@ -1,5 +1,5 @@
-const CACHE = "baddilha-v4";
-const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
+const CACHE = "baddilha-v9";
+const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-192.svg", "./icon-512.svg", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
