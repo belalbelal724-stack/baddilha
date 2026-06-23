@@ -1009,6 +1009,66 @@ button{font-family:inherit;cursor:pointer}
 .vg-pay{display:flex;gap:9px;margin-top:6px}
 .vg-pay-opt{flex:1;padding:12px;border-radius:12px;border:2px solid var(--bdr);background:var(--card);cursor:pointer;text-align:center;font-size:12px;font-weight:800;color:var(--tx)}
 .vg-pay-opt.sel{border-color:var(--G);background:rgba(201,162,39,.07)}
+/* ─── AI WRITE LISTING BANNER ─── */
+.ai-fill-banner{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:14px;border-radius:16px;cursor:pointer;
+  background:linear-gradient(135deg,#6d28d9,#8b5cf6);box-shadow:0 6px 18px rgba(109,40,217,.3);position:relative;overflow:hidden}
+.ai-fill-banner::after{content:'';position:absolute;top:-30px;left:-30px;width:120px;height:120px;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%)}
+.ai-fill-ico{font-size:28px;flex-shrink:0;animation:ai-pulse 2s ease-in-out infinite}
+@keyframes ai-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+.ai-fill-txt{flex:1;color:#fff;min-width:0}
+.ai-fill-t{font-size:13.5px;font-weight:900;line-height:1.3}
+.ai-fill-s{font-size:11px;opacity:.85;margin-top:2px}
+.ai-fill-arrow{color:#fff;font-size:20px;opacity:.8;flex-shrink:0}
+.ai-fill-banner.loading{background:linear-gradient(135deg,#4c1d95,#6d28d9)}
+.ai-fill-banner.done{background:linear-gradient(135deg,#16a34a,#22C55E);box-shadow:0 6px 18px rgba(34,197,94,.3)}
+/* ─── MAKE AN OFFER ─── */
+.offer-listed{text-align:center;font-size:13px;color:var(--tx3);margin-bottom:10px}
+.offer-listed b{color:var(--tx);font-size:16px}
+.offer-inp{width:100%;border:2px solid var(--bdr2);border-radius:14px;padding:14px;font-family:inherit;font-size:20px;font-weight:900;text-align:center;background:var(--bg2);color:var(--tx);outline:none;margin-bottom:10px}
+.offer-inp:focus{border-color:var(--P)}
+.offer-chips{display:flex;gap:8px;margin-bottom:12px}
+.offer-chip{flex:1;padding:9px;border-radius:10px;border:1.5px solid var(--bdr2);background:var(--card);font-family:inherit;font-size:12px;font-weight:800;color:var(--tx2);cursor:pointer}
+.offer-res{border-radius:14px;padding:14px;text-align:center;margin-top:12px;animation:slideUp .3s ease}
+.offer-res.ok{background:rgba(34,197,94,.1);border:1.5px solid rgba(34,197,94,.3)}
+.offer-res.counter{background:rgba(201,162,39,.1);border:1.5px solid rgba(201,162,39,.35)}
+.offer-res.no{background:rgba(220,38,38,.08);border:1.5px solid rgba(220,38,38,.3)}
+.offer-res-t{font-size:14px;font-weight:900;color:var(--tx)}
+.offer-res-s{font-size:12px;color:var(--tx3);margin:4px 0 10px}
+.offer-res-v{font-size:24px;font-weight:900}.offer-res.ok .offer-res-v{color:#16a34a}.offer-res.counter .offer-res-v{color:var(--GD)}
+/* ─── BOOST (إعلان مميّز) ─── */
+.boost-pkg{display:flex;align-items:center;gap:12px;padding:13px;border-radius:14px;border:2px solid var(--bdr);background:var(--card);cursor:pointer;margin-bottom:9px;transition:.18s}
+.boost-pkg.sel{border-color:var(--G);background:rgba(201,162,39,.06)}
+.boost-pkg-ico{font-size:22px;flex-shrink:0}
+.boost-pkg-mid{flex:1;min-width:0}
+.boost-pkg-t{font-size:14px;font-weight:900;color:var(--tx)}
+.boost-pkg-s{font-size:11px;color:var(--tx3);margin-top:1px}
+.boost-pkg-p{font-size:16px;font-weight:900;color:var(--GD);flex-shrink:0}
+.boost-tag{display:inline-block;font-size:9px;font-weight:800;color:#1a1206;background:linear-gradient(135deg,var(--G),var(--GL));padding:1px 6px;border-radius:6px;margin-right:5px}
+.acard-boost{position:absolute;top:8px;right:8px;z-index:3;font-size:9px;font-weight:900;color:#1a1206;background:linear-gradient(135deg,var(--GD),var(--GL));padding:3px 8px;border-radius:8px;box-shadow:0 2px 8px rgba(201,162,39,.45)}
+.my-boost-btn{background:linear-gradient(135deg,rgba(201,162,39,.15),rgba(226,188,69,.06));border:1.5px solid rgba(201,162,39,.4);color:var(--GD);border-radius:10px;padding:7px 11px;font-family:inherit;font-size:11px;font-weight:800;cursor:pointer}
+/* ─── AUCTIONS (المزادات) ─── */
+.auc-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:var(--sh)}
+.auc-top{display:flex;gap:11px;align-items:center}
+.auc-ico{width:46px;height:46px;border-radius:12px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.auc-t{font-size:14px;font-weight:800;color:var(--tx);line-height:1.3}
+.auc-meta{font-size:10px;color:var(--tx3);margin-top:2px}
+.auc-row{display:flex;gap:9px;margin-top:11px}
+.auc-cell{flex:1;background:var(--bg2);border-radius:10px;padding:9px;text-align:center}
+.auc-cell-v{font-size:15px;font-weight:900;color:var(--tx)}
+.auc-cell.cur .auc-cell-v{color:#16a34a}.auc-cell.time .auc-cell-v{color:#EA580C}
+.auc-cell-l{font-size:9px;color:var(--tx3);margin-top:2px}
+.auc-bid-btn{width:100%;margin-top:11px;padding:11px;border-radius:11px;border:none;background:linear-gradient(135deg,#9a3412,#EA580C);color:#fff;font-family:inherit;font-size:13px;font-weight:900;cursor:pointer}
+.auc-mine{width:100%;margin-top:11px;padding:11px;border-radius:11px;background:rgba(34,197,94,.12);color:#16a34a;font-size:12px;font-weight:800;text-align:center}
+.auc-ended{width:100%;margin-top:11px;padding:11px;border-radius:11px;background:var(--bg3);color:var(--tx3);font-size:12px;font-weight:800;text-align:center}
+/* ─── WANTED (المطلوب) ─── */
+.want-card{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:13px;margin-bottom:10px;box-shadow:var(--sh)}
+.want-ico{width:42px;height:42px;border-radius:11px;background:rgba(99,102,241,.1);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.want-mid{flex:1;min-width:0}
+.want-t{font-size:14px;font-weight:800;color:var(--tx)}
+.want-meta{font-size:10px;color:var(--tx3);margin-top:2px}
+.want-budget{font-size:13px;font-weight:900;color:#6366F1;flex-shrink:0;text-align:center}
+.want-budget small{display:block;font-size:8px;color:var(--tx3);font-weight:600}
+.want-respond{background:#6366F1;border:none;color:#fff;border-radius:9px;padding:8px 12px;font-family:inherit;font-size:11px;font-weight:800;cursor:pointer;flex-shrink:0}
 
 /* ─── SMART MATCH ────────────────────────── */
 .wl-modal{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);backdrop-filter:blur(4px)}
@@ -1876,6 +1936,8 @@ const A={
     if(this.flt.cat!=='الكل')ads=ads.filter(x=>x.cat===this.flt.cat);
     if(this.flt.cond!=='الكل')ads=ads.filter(x=>x.cond===this.flt.cond);
     if(this.flt.area!=='الكل')ads=ads.filter(x=>x.area===this.flt.area);
+    // الإعلانات المميّزة (Boost) تظهر أولاً
+    ads.sort((a,b)=>(this.isBoosted(b.id)?1:0)-(this.isBoosted(a.id)?1:0));
     return ads;
   },
 
@@ -1898,6 +1960,7 @@ const A={
       return `<div class="acard fiu" style="animation-delay:${Math.min(i*.045,.3)}s" onclick="A.openDet('${ad.id}')">
         <div class="aimgw">
           ${imgH}
+          ${this.isBoosted(ad.id)?'<div class="acard-boost">⭐ مميّز</div>':''}
           ${isM?'<div class="match-lbl">🔁 تطابق</div>':''}
           <div class="cond-bar"><span class="cpill ${cc}">${cn}</span></div>
         </div>
@@ -2012,7 +2075,10 @@ const A={
           <button class="btn-fav${S.isFav(id)?' on':''}" id="dfav" onclick="A.togFav('${id}')">♥</button>
           <button class="btn-shr" onclick="A.shareAd('${id}')">⬆️</button>
         </div>
-        ${!isOwn&&ad.price?`<button onclick="A.openBuy('${id}')" style="width:100%;margin-top:10px;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(234,88,12,.3)">💵 اشترِ الآن بـ ${(+ad.price).toLocaleString('en')} ريال</button>`:''}
+        ${!isOwn&&ad.price?`<div style="display:flex;gap:9px;margin-top:10px">
+          <button onclick="A.openBuy('${id}')" style="flex:1.4;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(234,88,12,.3)">💵 اشترِ بـ ${(+ad.price).toLocaleString('en')} ر</button>
+          <button onclick="A.openOffer('${id}')" style="flex:1;padding:13px;border-radius:12px;border:1.5px solid var(--P);background:transparent;color:var(--P);font-family:inherit;font-size:14px;font-weight:900;cursor:pointer">💬 قدّم عرض</button>
+        </div>`:''}
         ${!isOwn&&!S.isRep(id)?`<button onclick="A.repAd('${id}')" style="background:none;border:none;color:var(--tx3);font-size:12px;cursor:pointer;margin-top:10px;font-family:inherit;width:100%;text-align:center;padding:4px">🚩 الإبلاغ عن هذا الإعلان</button>`:''}
         ${simH}
         <div style="height:24px"></div>
@@ -2065,6 +2131,11 @@ const A={
         <div class="ftitle">${ad?'✏️ تعديل الإعلان':'✦ إعلان جديد'}</div>
         <div class="ftitle-sub">${ad?'عدّل بيانات إعلانك':'أضف إعلانك وابدأ التبادل مجاناً'}</div>
       </div>
+      ${ad?'':`<div class="ai-fill-banner" id="aiFillBanner" onclick="A.aiFillListing()">
+        <div class="ai-fill-ico">✨</div>
+        <div class="ai-fill-txt"><div class="ai-fill-t">📸 صوّر سلعتك ودع الذكاء الاصطناعي يكتب الإعلان</div><div class="ai-fill-s">العنوان · الفئة · الحالة · السعر المقترح — تلقائياً</div></div>
+        <div class="ai-fill-arrow">›</div>
+      </div>`}
       <div class="fg"><label class="flbl">🟢 عندي <span class="req">*</span></label>
         <input class="finp" id="fh" placeholder="مثال: آيفون 13 برو ماكس" value="${this._e(a.have)}"></div>
       <div class="fg"><label class="flbl">🔁 عايز بدلها <span class="req">*</span></label>
@@ -2162,9 +2233,10 @@ const A={
         <div class="mcard">
           <div class="mimg">${ad.imgs&&ad.imgs.length?`<img src="${ad.imgs[0]}">`:`<div class="noimg-sm">${CICO[ad.cat]||'📦'}</div>`}</div>
           <div class="minfo">
-            <div class="mtitle">${ad.have}</div>
-            <div class="mwant">عايز: ${ad.want}</div>
+            <div class="mtitle">${this.isBoosted(ad.id)?'<span class="boost-tag">⭐ مميّز</span> ':''}${ad.have}</div>
+            <div class="mwant">عايز: ${ad.want}${ad.price>0?` · 💵 ${(+ad.price).toLocaleString('en')} ر`:''}</div>
             <div class="mmeta">📍 ${ad.area} · 👁 ${(ad.views||0)+S.getV(ad.id)}</div>
+            ${this.isBoosted(ad.id)?'':`<button class="my-boost-btn" style="margin-top:7px" onclick="A.openBoost('${ad.id}')">⭐ ميّز إعلانك ليظهر أعلى النتائج</button>`}
           </div>
           <div class="macts">
             <button class="aibtn" onclick="A._edit('${ad.id}')">✏️</button>
@@ -2605,6 +2677,8 @@ A._initQuickRow=function(){
   const qrow=document.createElement('div');qrow.id='homeQuickRow';
   qrow.style.cssText='display:flex;gap:10px;padding:12px 16px 0;overflow-x:auto';
   qrow.innerHTML=`
+    <button onclick="A.openAuctions()" style="flex-shrink:0;padding:10px 14px;border-radius:12px;border:1.5px solid rgba(234,88,12,.35);background:linear-gradient(135deg,rgba(234,88,12,.12),rgba(251,146,60,.06));font-family:inherit;font-size:12px;font-weight:800;color:#EA580C;cursor:pointer;white-space:nowrap">🔨 المزادات</button>
+    <button onclick="A.openWanted()" style="flex-shrink:0;padding:10px 14px;border-radius:12px;border:1.5px solid rgba(99,102,241,.3);background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(139,92,246,.06));font-family:inherit;font-size:12px;font-weight:800;color:#6366F1;cursor:pointer;white-space:nowrap">📥 المطلوب</button>
     <button onclick="A.openWL()" style="flex-shrink:0;padding:10px 14px;border-radius:12px;border:1.5px solid rgba(99,102,241,.3);background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(139,92,246,.06));font-family:inherit;font-size:12px;font-weight:800;color:#6366F1;cursor:pointer;white-space:nowrap">🎯 رغباتي</button>
     <button onclick="A.openSZ()" style="flex-shrink:0;padding:10px 14px;border-radius:12px;border:none;background:var(--card);border:1px solid var(--bdr);font-family:inherit;font-size:12px;font-weight:700;color:var(--tx);cursor:pointer;white-space:nowrap;box-shadow:var(--sh)">📍 نقاط آمنة</button>
     <button onclick="A.openAI('إلكترونيات')" style="flex-shrink:0;padding:10px 14px;border-radius:12px;border:none;background:var(--card);border:1px solid var(--bdr);font-family:inherit;font-size:12px;font-weight:700;color:var(--tx);cursor:pointer;white-space:nowrap;box-shadow:var(--sh)">🤖 تقييم ذكي</button>
@@ -3089,9 +3163,141 @@ const FEED_TEMPLATES=[
   ['أحمد','آيباد برو','لاب توب',1700,'السد'],['لمى','كاميرا سوني','آيفون 15',2200,'الغرافة'],
   ['فيصل','بلايستيشن 5','ماك بوك',1500,'مشيرب'],['دانة','مكتبة كتب','اشتراك كورسات',180,'الدوحة']
 ];
+// بيانات محاكاة الذكاء الاصطناعي (تعرّف على السلعة من الصورة)
+const AI_DETECT=[
+  {have:'آيفون 13 برو 128GB',want:'لاب توب أو آيباد',cat:'إلكترونيات',cond:'مستعمل - ممتاز',price:1900,desc:'آيفون 13 برو 128 جيجا، صحة البطارية 89%، مع العلبة والشاحن الأصلي. حالة ممتازة بدون خدوش.'},
+  {have:'بلايستيشن 5 ديسك + يدّين',want:'إكس بوكس أو لاب توب',cat:'إلكترونيات',cond:'مستعمل - ممتاز',price:1500,desc:'سوني بلايستيشن 5 نسخة الديسك مع يدّين وكل الكابلات. نظيف جداً واستخدام خفيف.'},
+  {have:'دراجة هوائية جبلية 27 سرعة',want:'سكوتر كهربائي',cat:'رياضة',cond:'مستعمل',price:550,desc:'دراجة جبلية بإطار ألمنيوم خفيف، 27 سرعة، فرامل قرصية. مناسبة للطرق والجبال.'},
+  {have:'طقم كنب 3 مقاعد قماش رمادي',want:'طاولة طعام أو تلفزيون',cat:'أثاث',cond:'مستعمل - ممتاز',price:900,desc:'كنبة 3 مقاعد لون رمادي، قماش عالي الجودة، نظيفة جداً وبحالة ممتازة.'},
+  {have:'ساعة أبل Watch Series 8 45mm',want:'سماعات أو إكسسوارات',cat:'إلكترونيات',cond:'مستعمل - ممتاز',price:850,desc:'Apple Watch Series 8 مقاس 45mm مع حزام إضافي والشاحن. بطارية ممتازة.'},
+  {have:'غسالة LG أوتوماتيك 9 كيلو',want:'ثلاجة أو مكنسة',cat:'أجهزة منزلية',cond:'مستعمل',price:700,desc:'غسالة إل جي 9 كيلو، فول أوتوماتيك، شغالة 100%، مع ضمان متبقّي.'}
+];
+
+/* ════════════════ BOOST · AUCTIONS · WANTED ════════════════ */
+const BOOST_PKGS=[{days:3,price:15,tag:''},{days:7,price:25,tag:'الأكثر طلباً'},{days:14,price:40,tag:'أوفر'}];
+const AUCTION_SEED=[
+  {id:'a1',have:'آيفون 15 برو ماكس 256GB',cat:'إلكترونيات',area:'الدوحة',owner:'منصور آل ثاني',cur:3150,bids:7,mins:18},
+  {id:'a2',have:'بلايستيشن 5 برو جديد متبرشم',cat:'إلكترونيات',area:'لوسيل',owner:'عبدالله الكواري',cur:2250,bids:12,mins:45},
+  {id:'a3',have:'دراجة Canyon كربون احترافية',cat:'رياضة',area:'الريان',owner:'يوسف المنّاعي',cur:1480,bids:5,mins:120},
+  {id:'a4',have:'ساعة Apple Watch Ultra 2',cat:'إلكترونيات',area:'الغرافة',owner:'سارة العطية',cur:1500,bids:0,mins:9}
+];
+let AUCTIONS=AUCTION_SEED.map(a=>({...a,endsAt:Date.now()+a.mins*60000,mine:false}));
+const WANTED_SEED=[
+  {id:'w1',item:'آيفون 14 برو أو 15',budget:2500,area:'الدوحة',owner:'فهد المري',ago:'قبل 10 د'},
+  {id:'w2',item:'طاولة طعام 6 كراسي',budget:800,area:'الريان',owner:'عائشة آل ثاني',ago:'قبل 25 د'},
+  {id:'w3',item:'دراجة أطفال 4-7 سنين',budget:200,area:'الوكرة',owner:'خالد الهاجري',ago:'قبل ساعة'},
+  {id:'w4',item:'لاب توب للبرمجة Core i7',budget:2200,area:'لوسيل',owner:'نوف الكبيسي',ago:'قبل ساعتين'},
+  {id:'w5',item:'مكنسة روبوت تنظيف',budget:400,area:'الغرافة',owner:'سلطان العذبة',ago:'اليوم'}
+];
 
 Object.assign(A,{
-  closeGM(){document.getElementById('gmModal').classList.remove('show');},
+  /* ── BOOST (إعلان مميّز) ── */
+  isBoosted(id){const b=S.g('bdl_boost',{});return !!(b[id]&&b[id]>Date.now());},
+  openBoost(id){
+    const ad=S.myAds().find(x=>x.id===id)||S.allAds().find(x=>x.id===id); if(!ad)return; this._boostId=id; this._boostPkg=1;
+    this._gm(`<button class="gm-x" onclick="A.closeGM()">✕</button>
+      <div class="gm-hdr"><div class="gm-title">⭐ ميّز إعلانك</div><div class="gm-sub">ظهور أعلى النتائج بشارة مميّزة — مشاهدات أضعاف</div></div>
+      <div class="cq-item"><div class="cq-item-ico">${CICO[ad.cat]||'📦'}</div><div><div class="cq-item-t">${ad.have}</div><div class="cq-item-s">📍 ${ad.area}</div></div></div>
+      <div id="boostPkgs">${BOOST_PKGS.map((p,i)=>`<div class="boost-pkg${i===1?' sel':''}" onclick="A._selBoost(${i})">
+        <div class="boost-pkg-ico">${['🚀','🔥','💎'][i]}</div>
+        <div class="boost-pkg-mid"><div class="boost-pkg-t">${p.days} أيام${p.tag?`<span class="boost-tag">${p.tag}</span>`:''}</div><div class="boost-pkg-s">ظهور مميّز أعلى النتائج لمدة ${p.days} أيام</div></div>
+        <div class="boost-pkg-p">${p.price} ر</div></div>`).join('')}</div>
+      <button class="gm-cta" onclick="A.doBoost()">⭐ فعّل التمييز الآن</button>`);
+  },
+  _selBoost(i){this._boostPkg=i;document.querySelectorAll('#boostPkgs .boost-pkg').forEach((e,j)=>e.classList.toggle('sel',j===i));},
+  doBoost(){
+    const p=BOOST_PKGS[this._boostPkg]; const b=S.g('bdl_boost',{}); b[this._boostId]=Date.now()+p.days*86400000; S.s('bdl_boost',b);
+    const rev=S.g('bdl_rev',{total:0,count:0}); rev.total+=p.price; rev.count++; S.s('bdl_rev',rev); this.updRevBadge&&this.updRevBadge();
+    this.closeGM(); this.toast('⭐ تم تمييز إعلانك! ظهر الآن أعلى النتائج');
+    this.renderAds(); if(this.screen==='my')this.renderMyAds();
+  },
+
+  /* ── AUCTIONS (المزادات) ── */
+  openAuctions(){
+    this._gm(`<button class="gm-x" onclick="A.closeGM()">✕</button>
+      <div class="gm-hdr"><div class="gm-title">🔨 المزادات المباشرة</div><div class="gm-sub">زايد على سلع مميّزة — الأعلى يفوز</div></div>
+      <div id="aucList"></div>`);
+    this._renderAuctions();
+    if(this._aucTimer)clearInterval(this._aucTimer);
+    this._aucTimer=setInterval(()=>this._aucTick(),1000);
+  },
+  _fmtLeft(ms){ if(ms<=0)return 'انتهى'; const s=Math.floor(ms/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60; return (h?h+':':'')+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0'); },
+  _renderAuctions(){
+    const el=document.getElementById('aucList'); if(!el)return;
+    el.innerHTML=AUCTIONS.map(a=>{
+      const left=a.endsAt-Date.now(); const ended=left<=0; const step=a.cur>=2000?100:50; const next=a.cur+step;
+      return `<div class="auc-card"><div class="auc-top"><div class="auc-ico">${CICO[a.cat]||'📦'}</div>
+        <div style="flex:1"><div class="auc-t">${a.have}</div><div class="auc-meta">👤 ${a.owner} · 📍 ${a.area} · ${a.bids} مزايدة</div></div></div>
+        <div class="auc-row">
+          <div class="auc-cell cur"><div class="auc-cell-v">${a.cur.toLocaleString('en')} ر</div><div class="auc-cell-l">السعر الحالي</div></div>
+          <div class="auc-cell time"><div class="auc-cell-v" data-end="${a.endsAt}">${this._fmtLeft(left)}</div><div class="auc-cell-l">الوقت المتبقّي</div></div>
+        </div>
+        ${ended?`<div class="auc-ended">🏁 انتهى المزاد — ${a.mine?'مبروك! أنت الفائز 🎉':'فاز مزايد آخر'}</div>`
+          :a.mine?`<div class="auc-mine">🏆 أنت الأعلى (${a.cur.toLocaleString('en')} ر) · <button onclick="A.bid('${a.id}')" style="background:none;border:none;color:#16a34a;font-weight:900;cursor:pointer;font-family:inherit">زِد المزايدة</button></div>`
+          :`<button class="auc-bid-btn" onclick="A.bid('${a.id}')">🔨 زايد بـ ${next.toLocaleString('en')} ريال</button>`}
+      </div>`;
+    }).join('');
+  },
+  bid(id){
+    const a=AUCTIONS.find(x=>x.id===id); if(!a||a.endsAt<=Date.now())return;
+    const step=a.cur>=2000?100:50; a.cur+=step; a.bids++; a.mine=true;
+    this.toast('✅ مزايدتك '+a.cur.toLocaleString('en')+' ر — أنت الأعلى الآن!');
+    this._renderAuctions();
+    clearTimeout(this._rivalT);
+    this._rivalT=setTimeout(()=>{
+      if(a.endsAt<=Date.now()||!a.mine)return;
+      if(Math.random()<0.6){ const s=a.cur>=2000?100:50; a.cur+=s; a.bids++; a.mine=false;
+        this.toast('⚠️ زايد عليك مشترٍ آخر! السعر الآن '+a.cur.toLocaleString('en')+' ر');
+        if(document.getElementById('aucList'))this._renderAuctions();
+      }
+    },3500+Math.random()*2500);
+  },
+  _aucTick(){
+    const el=document.getElementById('aucList'); if(!el){clearInterval(this._aucTimer);this._aucTimer=null;return;}
+    let full=false;
+    el.querySelectorAll('.auc-cell.time .auc-cell-v').forEach(x=>{
+      const end=+x.getAttribute('data-end'); const left=end-Date.now(); x.textContent=this._fmtLeft(left);
+      if(left<=0&&!x.dataset.ended){x.dataset.ended='1';full=true;}
+    });
+    if(full)this._renderAuctions();
+  },
+
+  /* ── WANTED (المطلوب) ── */
+  _allWanted(){ return [...S.g('bdl_wanted',[]), ...WANTED_SEED]; },
+  openWanted(){
+    this._gm(`<button class="gm-x" onclick="A.closeGM()">✕</button>
+      <div class="gm-hdr"><div class="gm-title">📥 المطلوب</div><div class="gm-sub">أشخاص يبحثون عن سلع — عندك واحدة منها؟</div></div>
+      <button class="gm-cta p" style="margin-bottom:14px" onclick="A.addWantedForm()">➕ أضف طلباً (أنا أبحث عن...)</button>
+      <div id="wantList"></div>`);
+    this._renderWanted();
+  },
+  _renderWanted(){
+    const el=document.getElementById('wantList'); if(!el)return;
+    el.innerHTML=this._allWanted().map(w=>`<div class="want-card">
+      <div class="want-ico">🔎</div>
+      <div class="want-mid"><div class="want-t">${w.item}</div><div class="want-meta">👤 ${w.owner} · 📍 ${w.area} · ${w.ago||'الآن'}</div></div>
+      <div class="want-budget">${w.budget?w.budget.toLocaleString('en')+' ر':'مقايضة'}<small>الميزانية</small></div>
+      <button class="want-respond" onclick="A.respondWanted()">عندي ده 🙋</button>
+    </div>`).join('');
+  },
+  addWantedForm(){
+    this._gm(`<button class="gm-x" onclick="A.openWanted()">←</button>
+      <div class="gm-hdr"><div class="gm-title">➕ أضف طلباً</div><div class="gm-sub">اكتب ما تبحث عنه وسيجدك البائعون</div></div>
+      <div class="fg"><label class="flbl">🔎 أبحث عن <span class="req">*</span></label><input class="finp" id="wItem" placeholder="مثال: آيفون 14 برو"></div>
+      <div class="fg" style="margin-top:10px"><label class="flbl">💰 الميزانية (اختياري)</label><input class="finp" id="wBudget" type="number" inputmode="numeric" placeholder="مثال: 2000"></div>
+      <div class="fg" style="margin-top:10px"><label class="flbl">📍 المنطقة</label><select class="finp" id="wArea">${AREAS.slice(1).map(a=>`<option>${a}</option>`).join('')}</select></div>
+      <button class="gm-cta" style="margin-top:14px" onclick="A.submitWanted()">📥 انشر الطلب</button>`);
+  },
+  submitWanted(){
+    const item=(document.getElementById('wItem')||{}).value?.trim(); if(!item){this.toast('⚠️ اكتب ما تبحث عنه');return;}
+    const budget=parseInt((document.getElementById('wBudget')||{}).value)||0;
+    const area=(document.getElementById('wArea')||{}).value||'الدوحة';
+    const list=S.g('bdl_wanted',[]); list.unshift({id:'w'+Date.now(),item,budget,area,owner:'أنت',ago:'الآن'}); S.s('bdl_wanted',list);
+    this.toast('📥 تم نشر طلبك! سننبّهك عند توفّره'); this.openWanted();
+  },
+  respondWanted(){ this.closeGM(); this.toast('🙋 تم إبلاغ صاحب الطلب — سيتواصل معك لإتمام الصفقة'); },
+
+  closeGM(){document.getElementById('gmModal').classList.remove('show');if(this._aucTimer){clearInterval(this._aucTimer);this._aucTimer=null;}},
   _gm(html){document.getElementById('gmBox').innerHTML=html;document.getElementById('gmModal').classList.add('show');},
 
   /* ── BUY WITH CASH (شراء بالسعر المعلن) ── */
@@ -3116,6 +3322,77 @@ Object.assign(A,{
     this.closeGM(); this.closeBS&&this.closeBS();
     this.toast('✅ تم الشراء بنجاح! جاري ترتيب التوصيل 🚚');
     setTimeout(()=>this.openDlv(ad),700);
+  },
+
+  /* ── MAKE AN OFFER (التفاوض على السعر) ── */
+  openOffer(id){
+    const ad=S.allAds().find(x=>x.id===id); if(!ad||!ad.price){this.toast('هذه السلعة للمقايضة فقط');return;}
+    this._offerAd=ad; const price=+ad.price;
+    this._gm(`<button class="gm-x" onclick="A.closeGM()">✕</button>
+      <div class="gm-hdr"><div class="gm-title">💬 قدّم عرضك</div><div class="gm-sub">تفاوض مع البائع — يقبل أو يردّ بعرض مضاد</div></div>
+      <div class="cq-item"><div class="cq-item-ico">${CICO[ad.cat]||'📦'}</div><div><div class="cq-item-t">${ad.have}</div><div class="cq-item-s">📍 ${ad.area} · ${ad.owner}</div></div></div>
+      <div class="offer-listed">السعر المعلن: <b>${price.toLocaleString('en')} ريال</b></div>
+      <input class="offer-inp" id="offerInp" type="number" inputmode="numeric" placeholder="اكتب عرضك بالريال" oninput="document.getElementById('offerResult').innerHTML=''">
+      <div class="offer-chips">
+        <button class="offer-chip" onclick="A._offerQuick(.9)">−10%</button>
+        <button class="offer-chip" onclick="A._offerQuick(.8)">−20%</button>
+        <button class="offer-chip" onclick="A._offerQuick(.7)">−30%</button>
+      </div>
+      <button class="gm-cta p" onclick="A.sendOffer()">📨 أرسل العرض للبائع</button>
+      <div id="offerResult"></div>`);
+  },
+  _offerQuick(f){const inp=document.getElementById('offerInp'); if(inp){inp.value=Math.round((+this._offerAd.price*f)/5)*5; document.getElementById('offerResult').innerHTML='';}},
+  sendOffer(){
+    const ad=this._offerAd; const price=+ad.price;
+    const offer=parseInt((document.getElementById('offerInp')||{}).value)||0;
+    if(offer<=0){this.toast('⚠️ اكتب مبلغ العرض');return;}
+    const res=document.getElementById('offerResult');
+    if(offer>=price){ res.innerHTML=`<div class="offer-res ok"><div class="offer-res-t">عرضك أعلى من المعلن 👍</div><button class="gm-cta" style="margin-top:10px" onclick="A.acceptOfferDeal(${price},'${ad.id}')">✅ أكمل الشراء بـ ${price.toLocaleString('en')} ريال</button></div>`; return; }
+    const ratio=offer/price;
+    setTimeout(()=>{
+      if(ratio>=0.9){
+        res.innerHTML=`<div class="offer-res ok"><div class="offer-res-t">🎉 البائع قبِل عرضك!</div><div class="offer-res-v">${offer.toLocaleString('en')} ريال</div>
+          <button class="gm-cta" style="margin-top:10px" onclick="A.acceptOfferDeal(${offer},'${ad.id}')">✅ أكمل الشراء</button></div>`;
+      } else if(ratio>=0.72){
+        const counter=Math.round(((offer+price)/2)/5)*5;
+        res.innerHTML=`<div class="offer-res counter"><div class="offer-res-t">💬 البائع ردّ بعرض مضاد</div><div class="offer-res-s">عرضك ${offer.toLocaleString('en')} — البائع يعرض:</div><div class="offer-res-v">${counter.toLocaleString('en')} ريال</div>
+          <button class="gm-cta" style="margin-top:10px" onclick="A.acceptOfferDeal(${counter},'${ad.id}')">✅ اقبل بـ ${counter.toLocaleString('en')} ريال</button>
+          <button class="gm-cta ghost" style="margin-top:8px" onclick="document.getElementById('offerResult').innerHTML='';document.getElementById('offerInp').focus()">↩️ قدّم عرضاً جديداً</button></div>`;
+      } else {
+        const minP=Math.round((price*0.78)/5)*5;
+        res.innerHTML=`<div class="offer-res no"><div class="offer-res-t">❌ عرضك منخفض جداً</div><div class="offer-res-s">أقل سعر يقبله البائع تقريباً <b>${minP.toLocaleString('en')} ريال</b></div>
+          <button class="gm-cta ghost" onclick="document.getElementById('offerResult').innerHTML='';document.getElementById('offerInp').value=${minP};document.getElementById('offerInp').focus()">↩️ عدّل عرضك</button></div>`;
+      }
+    },650);
+    res.innerHTML=`<div style="text-align:center;color:var(--tx3);font-size:12px;padding:10px">⏳ جاري إرسال العرض للبائع...</div>`;
+  },
+  acceptOfferDeal(agreed,id){
+    const ad=S.allAds().find(x=>x.id===id); if(!ad)return;
+    const rev=S.g('bdl_rev',{total:0,count:0}); rev.total+=commissionFor(agreed); rev.count++; S.s('bdl_rev',rev); this.updRevBadge&&this.updRevBadge();
+    this.closeGM(); this.closeBS&&this.closeBS();
+    this.toast('🎉 تمت الصفقة بـ '+agreed.toLocaleString('en')+' ريال! جاري ترتيب التوصيل');
+    setTimeout(()=>this.openDlv(ad),700);
+  },
+
+  /* ── AI: صوّر سلعتك → إعلان جاهز ── */
+  aiFillListing(){
+    const b=document.getElementById('aiFillBanner'); if(!b||b.classList.contains('loading'))return;
+    b.classList.add('loading');
+    const msgs=['🔍 جاري تحليل الصورة...','🧠 التعرّف على نوع السلعة...','📊 مقارنة بآلاف الإعلانات...','💰 تقدير السعر العادل...'];
+    const tEl=b.querySelector('.ai-fill-t'), sEl=b.querySelector('.ai-fill-s'); const orig=tEl.textContent;
+    let i=0; tEl.textContent=msgs[0]; sEl.textContent='ثوانٍ قليلة...';
+    const iv=setInterval(()=>{ i++; if(i<msgs.length){tEl.textContent=msgs[i];} else {
+      clearInterval(iv);
+      const d=AI_DETECT[Math.floor(Math.random()*AI_DETECT.length)];
+      const set=(id,v)=>{const e=document.getElementById(id); if(e)e.value=v;};
+      set('fh',d.have); set('fw',d.want); set('fp',d.price); set('fd',d.desc);
+      const fc=document.getElementById('fc'); if(fc)fc.value=d.cat;
+      const fcd=document.getElementById('fcd'); if(fcd)fcd.value=d.cond;
+      b.classList.remove('loading'); b.classList.add('done');
+      tEl.textContent='✨ تم! الذكاء الاصطناعي كتب إعلانك'; sEl.textContent='راجِع البيانات وعدّل ما تريد ثم انشر';
+      this.toast('✨ تم إنشاء الإعلان بالـ AI — راجعه وانشره');
+      setTimeout(()=>{b.classList.remove('done');tEl.textContent=orig;sEl.textContent='العنوان · الفئة · الحالة · السعر المقترح — تلقائياً';},4000);
+    } },650);
   },
 
 
