@@ -1,4 +1,4 @@
-const CACHE = "baddilha-v14";
+const CACHE = "baddilha-v17";
 const ASSETS = ["./", "./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener("install", e => {

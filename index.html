@@ -941,6 +941,75 @@ button{font-family:inherit;cursor:pointer}
 .dlv-live-t2{font-size:11px;opacity:.85;margin-top:2px}
 .dlv-live-arrow{color:#fff;font-size:18px;opacity:.8}
 
+/* ═══════════ ECONOMY & GROWTH ═══════════ */
+/* coins pill in quick row */
+.coins-pill{flex-shrink:0;display:flex;align-items:center;gap:6px;padding:10px 13px;border-radius:12px;border:1.5px solid rgba(201,162,39,.4);background:linear-gradient(135deg,rgba(201,162,39,.16),rgba(226,188,69,.08));cursor:pointer;white-space:nowrap}
+.coins-pill-ico{font-size:15px}
+.coins-pill-v{font-size:13px;font-weight:900;color:var(--GD)}
+[data-dark=true] .coins-pill-v{color:var(--GL)}
+.coins-pill-l{font-size:10px;font-weight:700;color:var(--tx3)}
+/* live activity feed */
+.live-feed{margin:2px 16px 12px;background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:9px 13px;display:flex;align-items:center;gap:10px;overflow:hidden;box-shadow:var(--sh)}
+.live-feed-dot{width:8px;height:8px;border-radius:50%;background:#22C55E;flex-shrink:0;box-shadow:0 0 0 0 rgba(34,197,94,.6);animation:pulse-live 1.8s infinite}
+.live-feed-track{flex:1;min-width:0;height:18px;position:relative;overflow:hidden}
+.live-feed-item{position:absolute;inset:0;font-size:12px;color:var(--tx2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transform:translateY(8px);transition:.5s}
+.live-feed-item.on{opacity:1;transform:translateY(0)}
+.live-feed-item b{color:var(--tx);font-weight:800}
+.live-feed-cnt{font-size:10px;font-weight:800;color:#16a34a;background:rgba(34,197,94,.12);padding:2px 7px;border-radius:8px;flex-shrink:0}
+/* generic centered modal (wallet/referral/coin/value-gap) */
+.gm{position:fixed;inset:0;z-index:650;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);backdrop-filter:blur(4px)}
+.gm.show{display:flex}
+.gm-box{background:var(--card);border-radius:26px 26px 0 0;width:100%;max-width:480px;max-height:88vh;overflow-y:auto;animation:slideUp .3s ease;padding:20px 18px calc(var(--sb)+20px)}
+.gm-x{position:absolute;top:14px;left:14px;background:var(--bg3);border:none;width:32px;height:32px;border-radius:50%;font-size:15px;cursor:pointer;color:var(--tx2)}
+.gm-hdr{text-align:center;margin-bottom:16px;position:relative}
+.gm-title{font-size:18px;font-weight:900;color:var(--tx)}
+.gm-sub{font-size:12px;color:var(--tx3);margin-top:3px}
+/* wallet */
+.wlt-bal{background:linear-gradient(135deg,#A5831A,#C9A227 55%,#E2BC45);border-radius:20px;padding:20px;text-align:center;color:#1a1206;position:relative;overflow:hidden;box-shadow:0 8px 24px rgba(201,162,39,.35)}
+.wlt-bal::after{content:'';position:absolute;top:-40px;left:-40px;width:140px;height:140px;background:radial-gradient(circle,rgba(255,255,255,.3),transparent 70%)}
+.wlt-bal-l{font-size:12px;font-weight:800;opacity:.8}
+.wlt-bal-v{font-size:40px;font-weight:900;line-height:1.1;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px}
+.wlt-bal-s{font-size:11px;opacity:.75;margin-top:4px}
+.wlt-earn{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:16px 0}
+.wlt-earn-card{background:var(--bg2);border-radius:14px;padding:13px;text-align:center}
+.wlt-earn-ico{font-size:22px}.wlt-earn-v{font-size:13px;font-weight:900;color:var(--GD);margin-top:4px}.wlt-earn-l{font-size:10px;color:var(--tx3);margin-top:2px}
+.wlt-sec-t{font-size:12px;font-weight:800;color:var(--tx3);margin:14px 0 8px}
+.wlt-tx{display:flex;align-items:center;gap:11px;padding:10px 0;border-bottom:1px solid var(--bdr)}
+.wlt-tx-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.wlt-tx-ico.earn{background:rgba(34,197,94,.12)}.wlt-tx-ico.spend{background:rgba(234,88,12,.12)}
+.wlt-tx-info{flex:1;min-width:0}.wlt-tx-desc{font-size:13px;font-weight:700;color:var(--tx)}.wlt-tx-date{font-size:10px;color:var(--tx3);margin-top:1px}
+.wlt-tx-amt{font-size:14px;font-weight:900;flex-shrink:0}.wlt-tx-amt.earn{color:#16a34a}.wlt-tx-amt.spend{color:#EA580C}
+.gm-cta{width:100%;padding:14px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--GD),var(--G));color:#1a1206;font-family:inherit;font-size:15px;font-weight:900;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+.gm-cta.p{background:linear-gradient(135deg,var(--P),var(--PL));color:#fff}
+.gm-cta.ghost{background:transparent;border:1.5px solid var(--bdr2);color:var(--tx2)}
+/* referral */
+.ref-hero{font-size:46px;text-align:center}
+.ref-reward{background:linear-gradient(135deg,rgba(201,162,39,.12),rgba(226,188,69,.05));border:1.5px solid rgba(201,162,39,.3);border-radius:16px;padding:14px;text-align:center;margin:12px 0}
+.ref-reward-v{font-size:22px;font-weight:900;color:var(--GD)}.ref-reward-l{font-size:12px;color:var(--tx3);margin-top:2px}
+.ref-code{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1.5px dashed var(--bdr2);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.ref-code-v{font-size:20px;font-weight:900;letter-spacing:2px;color:var(--P);font-family:monospace}
+.ref-stats{display:flex;gap:9px;margin-top:12px}
+.ref-stat{flex:1;background:var(--bg2);border-radius:12px;padding:12px;text-align:center}
+.ref-stat-v{font-size:20px;font-weight:900;color:var(--tx)}.ref-stat-l{font-size:10px;color:var(--tx3);margin-top:2px}
+/* coin-acquire + value-gap */
+.cq-item{display:flex;align-items:center;gap:12px;background:var(--bg2);border-radius:14px;padding:13px;margin-bottom:14px}
+.cq-item-ico{width:48px;height:48px;border-radius:12px;background:var(--card);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.cq-item-t{font-size:14px;font-weight:800;color:var(--tx)}.cq-item-s{font-size:11px;color:var(--tx3);margin-top:2px}
+.cq-price{text-align:center;margin:14px 0}
+.cq-price-v{font-size:34px;font-weight:900;color:var(--GD);display:flex;align-items:center;justify-content:center;gap:8px}
+.cq-price-l{font-size:11px;color:var(--tx3);margin-top:2px}
+.cq-bal{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border-radius:12px;padding:11px 14px;font-size:13px;font-weight:700;color:var(--tx2);margin-bottom:6px}
+.vg-bars{margin:14px 0}
+.vg-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.vg-row-l{font-size:12px;font-weight:700;color:var(--tx2);width:64px;flex-shrink:0}
+.vg-bar{flex:1;height:24px;border-radius:8px;background:var(--bg2);overflow:hidden;position:relative}
+.vg-bar-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding:0 8px;font-size:11px;font-weight:800;color:#fff}
+.vg-gap{background:linear-gradient(135deg,rgba(234,88,12,.1),rgba(234,88,12,.04));border:1.5px solid rgba(234,88,12,.25);border-radius:14px;padding:14px;text-align:center;margin:14px 0}
+.vg-gap-v{font-size:26px;font-weight:900;color:#EA580C}.vg-gap-l{font-size:11px;color:var(--tx3);margin-top:2px}
+.vg-pay{display:flex;gap:9px;margin-top:6px}
+.vg-pay-opt{flex:1;padding:12px;border-radius:12px;border:2px solid var(--bdr);background:var(--card);cursor:pointer;text-align:center;font-size:12px;font-weight:800;color:var(--tx)}
+.vg-pay-opt.sel{border-color:var(--G);background:rgba(201,162,39,.07)}
+
 /* ─── SMART MATCH ────────────────────────── */
 .wl-modal{position:fixed;inset:0;z-index:600;display:none;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);backdrop-filter:blur(4px)}
 .wl-modal.show{display:flex}
@@ -1581,6 +1650,11 @@ button{font-family:inherit;cursor:pointer}
   </div>
 </div>
 
+<!-- GENERIC GROWTH MODAL (wallet / referral / coins / value-gap) -->
+<div class="gm" id="gmModal" onclick="if(event.target===this)A.closeGM()">
+  <div class="gm-box" id="gmBox"></div>
+</div>
+
 <script>
 /* ═══════════════════ CONSTANTS ════════════════════ */
 const CATS=['الكل','إلكترونيات','أثاث','ملابس','كتب','أجهزة منزلية','ألعاب أطفال','رياضة','أخرى'];
@@ -1626,6 +1700,8 @@ const SAMPLE=[
   {id:'s9',have:'دمبلز وأوزان منزلية - طقم 50 كيلو',want:'دراجة رياضية أو سكوتر كهربائي',desc:'طقم أوزان مطاطية ملونة مع بار، استخدام خفيف. مناسبة للجيم المنزلي.',cat:'رياضة',cond:'مستعمل',area:'المظيلة',owner:'طارق المنصوري',phone:'97411122334',date:'2026-06-21',views:28,imgs:[]},
   {id:'s10',have:'كاميرا Sony Alpha A6400 + عدسة 18-135',want:'آيفون 14 برو أو آيفون 15',desc:'كاميرا ميرورلس احترافية مع عدسة زوم. استخدام شخصي خفيف، مع حقيبة وبطاريتين.',cat:'إلكترونيات',cond:'مستعمل - ممتاز',area:'فريج',owner:'لمى الحمدان',phone:'97455667788',date:'2026-06-13',views:176,imgs:[]},
 ];
+// سعر نقدي معلن لكل سلعة (0 = للمقايضة فقط) — البائع يحدّد سلعة و/أو مبلغ
+(function(){const P={s1:1700,s2:1400,s3:600,s4:120,s5:1500,s6:0,s7:850,s8:0,s9:350,s10:2200};SAMPLE.forEach(s=>{if(s.price==null)s.price=P[s.id]||0;});})();
 
 /* ═══════════════════ STORAGE ══════════════════════ */
 const S={
@@ -1763,6 +1839,7 @@ const A={
     try{this._initQuickRow();}catch(e){}
     try{this._updateMatchBanner();}catch(e){}
     try{this.renderDlvBanner(); if(DeliveryAPI.getActiveOrder())DeliveryAPI.startTimer();}catch(e){}
+    try{this._initLiveFeed();}catch(e){}
   },
 
   isDark(){
@@ -1826,7 +1903,7 @@ const A={
         </div>
         <div class="abody">
           <div class="ahave">${ad.have}</div>
-          <div class="awant"><em>عايز: </em>${ad.want}</div>
+          <div class="awant"><em>عايز: </em>${ad.want}${(+ad.price>0)?` <span style="color:#16a34a;font-weight:800;white-space:nowrap">أو 💵 ${(+ad.price).toLocaleString('en')} ر.ق</span>`:''}</div>
           <div class="ameta">
             <span class="mtag">${CICO[ad.cat]||'📦'} ${ad.cat}</span>
             <span class="mtag">📍 ${ad.area}</span>
@@ -1913,7 +1990,8 @@ const A={
           <span class="aviews">👁 ${views} مشاهدة</span>
         </div>
         <div class="dhave">${ad.have}</div>
-        <div class="dwant"><div class="dwant-ico">🔁</div>${ad.want}</div>
+        <div class="dwant"><div class="dwant-ico">🔁</div>مقابل: ${ad.want}</div>
+        ${(+ad.price>0)?`<div class="dwant" style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25)"><div class="dwant-ico" style="background:rgba(34,197,94,.15)">💵</div>أو اشترِها بـ <b style="color:#16a34a">${(+ad.price).toLocaleString('en')} ريال</b></div>`:'<div style="font-size:11px;color:var(--tx3);margin-top:6px">🔁 هذه السلعة للمقايضة فقط</div>'}
         ${ad.desc?`<div class="ddesc">${ad.desc}</div>`:''}
         <div class="digrid">
           <div class="icard"><div class="icard-l">القسم</div><div class="icard-v">${CICO[ad.cat]||''} ${ad.cat}</div></div>
@@ -1934,6 +2012,7 @@ const A={
           <button class="btn-fav${S.isFav(id)?' on':''}" id="dfav" onclick="A.togFav('${id}')">♥</button>
           <button class="btn-shr" onclick="A.shareAd('${id}')">⬆️</button>
         </div>
+        ${!isOwn&&ad.price?`<button onclick="A.openBuy('${id}')" style="width:100%;margin-top:10px;padding:13px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--P),var(--PL));color:#fff;font-family:inherit;font-size:14px;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(234,88,12,.3)">💵 اشترِ الآن بـ ${(+ad.price).toLocaleString('en')} ريال</button>`:''}
         ${!isOwn&&!S.isRep(id)?`<button onclick="A.repAd('${id}')" style="background:none;border:none;color:var(--tx3);font-size:12px;cursor:pointer;margin-top:10px;font-family:inherit;width:100%;text-align:center;padding:4px">🚩 الإبلاغ عن هذا الإعلان</button>`:''}
         ${simH}
         <div style="height:24px"></div>
@@ -1990,6 +2069,8 @@ const A={
         <input class="finp" id="fh" placeholder="مثال: آيفون 13 برو ماكس" value="${this._e(a.have)}"></div>
       <div class="fg"><label class="flbl">🔁 عايز بدلها <span class="req">*</span></label>
         <input class="finp" id="fw" placeholder="مثال: لاب توب أو سرفس برو" value="${this._e(a.want)}"></div>
+      <div class="fg"><label class="flbl">💵 أو سعر نقدي بالريال <span style="color:var(--tx3);font-weight:400">(اختياري)</span></label>
+        <input class="finp" id="fp" type="number" inputmode="numeric" placeholder="مثال: 1500 — اتركه فارغاً للمقايضة فقط" value="${a.price||''}"></div>
       <div class="fg"><label class="flbl">📝 وصف إضافي</label>
         <textarea class="ftxt" id="fd" placeholder="تفاصيل الحالة، المواصفات، ملاحظات مهمة...">${this._e(a.desc)}</textarea></div>
       <div class="frow">
@@ -2045,7 +2126,7 @@ const A={
     const have=v('fh'),want=v('fw'),owner=v('fow'),phone=v('fph');
     if(!have||!want||!owner||!phone){this.toast('⚠️ كمّل البيانات المطلوبة');return;}
     S.saveAd({
-      id:eid||'u'+Date.now(),have,want,desc:v('fd'),cat:v('fc'),cond:v('fcd'),area:v('far'),
+      id:eid||'u'+Date.now(),have,want,price:Math.max(0,parseInt(v('fp'))||0),desc:v('fd'),cat:v('fc'),cond:v('fcd'),area:v('far'),
       owner,phone,imgs:[...this.existImgs,...this.newImgs].slice(0,5),
       date:new Date().toISOString().split('T')[0],views:0,
     });
@@ -2986,6 +3067,82 @@ const DeliveryAPI={
 };
 // attach live provider object getter for tracking render
 Object.defineProperty(DeliveryAPI,'__noop',{value:1});
+
+/* ════════════════ SALE MODEL · العمولة الثابتة ════════════════
+ * نموذج البيع: المعلن يعرض سلعته مقابل سلعة محددة و/أو مبلغ نقدي.
+ * المشتري يقايض أو يشتري بالسعر المعلن. المنصة تأخذ عمولة ثابتة على كل بيعة.
+ */
+// عمولة متدرّجة حسب سعر السلعة (ر.ق) — غيّر الشرائح حسب السوق
+function commissionFor(price){
+  const p=+price||0;
+  if(p<=300)  return 5;
+  if(p<=700)  return 10;
+  if(p<=1200) return 15;
+  if(p<=2000) return 20;
+  if(p<=5000) return 25;
+  return 50;
+}
+const FEED_TEMPLATES=[
+  ['طارق','آيفون 13 برو','بلايستيشن 5',520,'الدوحة'],['نورة','طقم كنب جلد','تلفزيون OLED',1300,'الريان'],
+  ['خالد','دراجة Trek','سكوتر كهربائي',650,'لوسيل'],['مريم','فستان سهرة','مجوهرات',800,'أم سلال'],
+  ['سعد','مكيف سبليت','غسالة',900,'الوكرة'],['هنوف','ليغو Technic','دراجة أطفال',300,'الخور'],
+  ['أحمد','آيباد برو','لاب توب',1700,'السد'],['لمى','كاميرا سوني','آيفون 15',2200,'الغرافة'],
+  ['فيصل','بلايستيشن 5','ماك بوك',1500,'مشيرب'],['دانة','مكتبة كتب','اشتراك كورسات',180,'الدوحة']
+];
+
+Object.assign(A,{
+  closeGM(){document.getElementById('gmModal').classList.remove('show');},
+  _gm(html){document.getElementById('gmBox').innerHTML=html;document.getElementById('gmModal').classList.add('show');},
+
+  /* ── BUY WITH CASH (شراء بالسعر المعلن) ── */
+  openBuy(id){
+    const ad=S.allAds().find(x=>x.id===id); if(!ad||!ad.price){this.toast('هذه السلعة متاحة للمقايضة فقط');return;}
+    const price=+ad.price; const comm=commissionFor(price); const total=price+comm; this._buyAd=ad;
+    this._gm(`<button class="gm-x" onclick="A.closeGM()">✕</button>
+      <div class="gm-hdr"><div class="gm-title">💵 شراء بالسعر المعلن</div><div class="gm-sub">ادفع المبلغ واستلم السلعة عبر التوصيل الآمن</div></div>
+      <div class="cq-item"><div class="cq-item-ico">${CICO[ad.cat]||'📦'}</div><div><div class="cq-item-t">${ad.have}</div><div class="cq-item-s">📍 ${ad.area} · ${ad.owner}</div></div></div>
+      <div class="dlv-summary" style="margin-bottom:14px">
+        <div class="dlv-sum-row"><span class="dlv-sum-label">سعر السلعة المعلن</span><span class="dlv-sum-val">${price.toLocaleString('en')} ريال</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label">عمولة المنصة</span><span class="dlv-sum-val">${comm} ريال</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label">حماية المشتري (Escrow)</span><span class="dlv-sum-val" style="color:#22C55E">مجاني ✓</span></div>
+        <div class="dlv-sum-row"><span class="dlv-sum-label" style="font-weight:900;color:var(--tx)">الإجمالي</span><span class="dlv-sum-total">${total.toLocaleString('en')} ريال</span></div>
+      </div>
+      <button class="gm-cta p" onclick="A.confirmBuy()">🔒 ادفع ${total.toLocaleString('en')} ريال بأمان</button>
+      <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px">🔒 مبلغك محمي حتى تستلم السلعة · يُحرَّر للبائع بعد تأكيد الاستلام</div>`);
+  },
+  confirmBuy(){
+    const ad=this._buyAd; if(!ad)return;
+    const rev=S.g('bdl_rev',{total:0,count:0}); rev.total+=commissionFor(ad.price); rev.count++; S.s('bdl_rev',rev); this.updRevBadge&&this.updRevBadge();
+    this.closeGM(); this.closeBS&&this.closeBS();
+    this.toast('✅ تم الشراء بنجاح! جاري ترتيب التوصيل 🚚');
+    setTimeout(()=>this.openDlv(ad),700);
+  },
+
+
+  /* ── LIVE ACTIVITY FEED ── */
+  _initLiveFeed(){
+    const home=document.getElementById('s-home'); if(!home||document.getElementById('liveFeed'))return;
+    const fb=document.createElement('div'); fb.id='liveFeed'; fb.className='live-feed';
+    fb.innerHTML=`<div class="live-feed-dot"></div><div class="live-feed-track" id="liveFeedTrack"></div><div class="live-feed-cnt" id="liveFeedCnt">+0 اليوم</div>`;
+    const chips=document.getElementById('catChips');
+    if(chips&&chips.parentNode===home)home.insertBefore(fb,chips.nextSibling); else home.insertBefore(fb,home.firstChild);
+    this._feedIdx=0; this._feedDayCount=37+Math.floor(Math.random()*20);
+    this._renderFeedItem();
+    if(this._feedTimer)clearInterval(this._feedTimer);
+    this._feedTimer=setInterval(()=>this._renderFeedItem(),3500);
+  },
+  _renderFeedItem(){
+    const track=document.getElementById('liveFeedTrack'); if(!track)return;
+    const t=FEED_TEMPLATES[this._feedIdx%FEED_TEMPLATES.length];
+    const mins=1+Math.floor(Math.random()*9);
+    const cnt=document.getElementById('liveFeedCnt'); if(cnt)cnt.textContent='🔥 +'+(this._feedDayCount+this._feedIdx)+' صفقة اليوم';
+    const isSale=this._feedIdx%2===0;
+    const body=isSale?`<b>${t[0]}</b> باع ${t[1]} بـ${t[3].toLocaleString('en')} ر · ${t[4]}`:`<b>${t[0]}</b> بادل ${t[1]} ↔ ${t[2]} · ${t[4]}`;
+    track.innerHTML=`<div class="live-feed-item">${body} · قبل ${mins} د</div>`;
+    requestAnimationFrame(()=>{const it=track.querySelector('.live-feed-item');if(it)it.classList.add('on');});
+    this._feedIdx++;
+  },
+});
 
 /* ═══════════════════ i18N (AR ⇄ EN) ═══════════════════ */
 const DICT={
